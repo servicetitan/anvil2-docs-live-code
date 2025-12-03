@@ -10,3 +10,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+:root {
+  color-scheme: light dark;
+  color: #ffffff;
+  background-color: #141414;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #141414;
+    background-color: #ffffff;
+  }
+}
