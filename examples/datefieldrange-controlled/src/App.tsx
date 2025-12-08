@@ -1,0 +1,34 @@
+import {
+  DateFieldRange,
+  Button,
+  type DateFieldRangeValue,
+} from "@servicetitan/anvil2";
+import { useState } from "react";
+
+function App() {
+  const [value, setValue] = useState<DateFieldRangeValue | undefined>();
+
+  const today = new Date();
+  const plus5days = new Date();
+  plus5days.setDate(today.getDate() + 5);
+  const valueToSet = {
+    startDate: today.toISOString(),
+    endDate: plus5days.toISOString(),
+  };
+
+  return (
+    <>
+      <DateFieldRange
+        value={value}
+        onChange={(change) =>
+          setValue({ startDate: change.startDate, endDate: change.endDate })
+        }
+      />
+      <Button onClick={() => setValue(valueToSet)}>
+        Set to today + 5 days
+      </Button>
+    </>
+  );
+}
+
+export default App;
