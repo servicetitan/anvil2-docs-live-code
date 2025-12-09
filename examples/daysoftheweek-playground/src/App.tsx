@@ -5,19 +5,21 @@ function App() {
   const [selectedDays, setSelectedDays] = useState<number[]>([]);
 
   return (
-    <DaysOfTheWeek
-      selectedDays={selectedDays}
-      onChange={setSelectedDays}
-      label="Label text"
-      hint="Hint text"
-      description="Description text"
-      // errorMessage="Error message"
-      errorAriaLive="assertive"
-      disabled={false}
-      firstDay={7}
-      required={false}
-      moreInfo="More info"
-    />
+    <div style={{ minWidth: "21rem" }}>
+      <DaysOfTheWeek
+        selectedDays={selectedDays}
+        onChange={setSelectedDays}
+        label="Label text"
+        hint="Hint text"
+        description="Description text"
+        // errorMessage="Error message"
+        errorAriaLive="assertive"
+        disabled={false}
+        firstDay={7}
+        required={false}
+        moreInfo="More info"
+      />
+    </div>
   );
 }
 
