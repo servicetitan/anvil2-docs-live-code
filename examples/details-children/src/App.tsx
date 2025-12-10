@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Details, Flex, Text } from "@servicetitan/anvil2";
 
 function App() {

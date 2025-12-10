@@ -6,7 +6,7 @@ import {
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<DateFieldRangeValue | undefined>();
+  const [value, setValue] = useState<DateFieldRangeValue>();
 
   const today = new Date();
   const plus5days = new Date();

@@ -2,7 +2,7 @@ import { Details, type DetailsProps } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
-  const [expanded, setExpanded] = useState<string | undefined>();
+  const [expanded, setExpanded] = useState<string>();
   const expandDetails = (id: DetailsProps["id"]) => {
     setExpanded((prev) => (prev === id ? undefined : id));
   };

@@ -6,10 +6,8 @@ import {
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<string | null | undefined>();
-  const [latestEvent, setLatestEvent] = useState<
-    DateFieldSingleChange | undefined
-  >();
+  const [value, setValue] = useState<string | null>();
+  const [latestEvent, setLatestEvent] = useState<DateFieldSingleChange>();
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (change: DateFieldSingleChange) => {

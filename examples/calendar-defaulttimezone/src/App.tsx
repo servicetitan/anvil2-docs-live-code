@@ -2,7 +2,7 @@ import { Calendar, Flex } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
-  const [date, setDate] = useState<string | undefined>(undefined);
+  const [date, setDate] = useState<string>();
 
   return (
     <Flex direction="column" gap="3" alignItems="center">

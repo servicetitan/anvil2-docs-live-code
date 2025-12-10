@@ -13,7 +13,7 @@ function App() {
     },
   ]);
 
-  const handleUpdate = (_state: RadioState, index: number) => {
+  const handleUpdate = (_state: RadioState | undefined, index: number) => {
     setList((prev) =>
       prev.map((item, i) => ({
         label: item.label,
@@ -30,7 +30,7 @@ function App() {
             key={i}
             checked={item.checked}
             label={item.label}
-            onClick={(e, state) => handleUpdate(state, i)}
+            onChange={(_e, state) => handleUpdate(state, i)}
           />
         );
       })}

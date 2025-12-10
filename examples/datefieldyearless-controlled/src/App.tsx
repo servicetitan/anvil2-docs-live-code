@@ -6,7 +6,7 @@ import {
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<YearlessDate | null | undefined>();
+  const [value, setValue] = useState<YearlessDate | null>();
 
   return (
     <>

@@ -7,10 +7,8 @@ import {
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<YearlessDate | null | undefined>();
-  const [latestEvent, setLatestEvent] = useState<
-    DateFieldYearlessChange | undefined
-  >();
+  const [value, setValue] = useState<YearlessDate | null>();
+  const [latestEvent, setLatestEvent] = useState<DateFieldYearlessChange>();
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (change: DateFieldYearlessChange) => {

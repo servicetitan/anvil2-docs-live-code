@@ -2,7 +2,7 @@ import { DateFieldSingle, Button } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<string | null | undefined>();
+  const [value, setValue] = useState<string | null>();
 
   return (
     <>
