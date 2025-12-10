@@ -8,7 +8,7 @@ function App() {
     <Flex justifyContent="space-around">
       <Switch
         checked={checked}
-        onChange={(e, { checked }) => {
+        onChange={(_e, { checked }) => {
           setChecked(checked);
         }}
         label="Switch"
