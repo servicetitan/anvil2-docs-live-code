@@ -5,11 +5,13 @@ function App() {
   const [selectedDays, setSelectedDays] = useState<number[]>([]);
 
   return (
-    <DaysOfTheWeek
-      selectedDays={selectedDays}
-      onChange={setSelectedDays}
-      firstDay={1}
-    />
+    <div style={{ minWidth: "20.5rem" }}>
+      <DaysOfTheWeek
+        selectedDays={selectedDays}
+        onChange={setSelectedDays}
+        firstDay={1}
+      />
+    </div>
   );
 }
 
