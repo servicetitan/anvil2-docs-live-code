@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@servicetitan/anvil2": "^1.48.1",
+    "@servicetitan/anvil2": "latest",
     "react": "^18",
     "react-dom": "^18"
   },
