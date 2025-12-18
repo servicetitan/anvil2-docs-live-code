@@ -4,7 +4,7 @@ import Close from "@servicetitan/anvil2/assets/icons/material/round/close.svg";
 function App() {
   return (
     <div>
-      <Flex justifyContent="center" style={{ paddingTop: "6rem" }}>
+      <Flex justifyContent="center" style={{ paddingTop: "5rem" }}>
         <Popover placement="top" defaultOpen>
           <Popover.Button>Toggle Popover</Popover.Button>
           <Popover.Content>
