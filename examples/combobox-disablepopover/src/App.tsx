@@ -18,8 +18,8 @@ function App() {
   const [selectedItems, setSelectedItems] = useState<Item[] | null>([]);
 
   return (
-    <div style={{ minHeight: "284px" }}>
-      <Popover placement="right-start">
+    <div style={{ minHeight: "284px", paddingInlineEnd: "18rem" }}>
+      <Popover placement="right-start" defaultOpen>
         <Popover.Button>Add technician(s)</Popover.Button>
         <Popover.Content>
           <Combobox

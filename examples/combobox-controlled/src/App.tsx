@@ -23,7 +23,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState<Item | null>();
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
       <Flex gap={8}>
         <Flex grow={1} direction="column" alignItems="center" gap={4}>
           <Button onClick={() => setSelectedItem(items[0])}>
@@ -51,6 +51,7 @@ function App() {
           onChange={setSelectedItem}
           filterOptions={{ keys: ["name"] }}
           style={{ width: "50vw", maxWidth: "50%" }}
+          defaultIsOpen
         >
           <Combobox.SearchField
             label="Select an item (single)"

@@ -23,7 +23,7 @@ function App() {
   const [, setSelectedItem] = useState<Item | null>(items[3]);
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
       <Combobox
         items={items}
         itemToString={(item) => (item ? item.name : "")}
@@ -31,6 +31,7 @@ function App() {
         defaultSelectedItem={items[3]}
         onChange={setSelectedItem}
         filterOptions={{ keys: ["name"] }}
+        defaultIsOpen
       >
         <Combobox.SearchField
           label="Select an item (single)"

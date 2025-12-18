@@ -23,7 +23,7 @@ function App() {
   const [, setSelectedItems] = useState<Item[] | null>([items[2], items[4]]);
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
       <Combobox
         multiple
         items={items}
@@ -32,6 +32,7 @@ function App() {
         defaultSelectedItems={[items[2], items[4]]}
         onChange={setSelectedItems}
         filterOptions={{ keys: ["name"] }}
+        defaultIsOpen
       >
         <Combobox.SearchField
           label="Select an item (multiple)"

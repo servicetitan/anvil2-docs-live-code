@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
       <Combobox
         multiple
         items={items}
@@ -39,6 +39,8 @@ function App() {
         itemToKey={(item) => (item ? item.id : null)}
         selectedItems={selectedItems ?? []}
         onChange={setSelectedItems}
+        defaultIsOpen
+        defaultInputValue="New item"
       >
         <Combobox.SearchField
           label="Select an item"

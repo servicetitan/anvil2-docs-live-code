@@ -23,7 +23,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState<Item | null>(items[1]);
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
       <Combobox.Select
         disableClearSelection
         items={items}
@@ -31,6 +31,7 @@ function App() {
         itemToKey={(item) => (item ? item.id : null)}
         selectedItem={selectedItem}
         onChange={setSelectedItem}
+        defaultIsOpen
       >
         <Combobox.SelectTrigger
           label="Select an item"
