@@ -3,9 +3,9 @@ import Close from "@servicetitan/anvil2/assets/icons/material/round/close.svg";
 
 function App() {
   return (
-    <div style={{ minHeight: "284px" }}>
-      <Flex justifyContent="center" style={{ paddingTop: "4rem" }}>
-        <Popover placement="top">
+    <div>
+      <Flex justifyContent="center" style={{ paddingTop: "6rem" }}>
+        <Popover placement="top" defaultOpen>
           <Popover.Button>Toggle Popover</Popover.Button>
           <Popover.Content>
             <Flex alignItems="center" gap="2">

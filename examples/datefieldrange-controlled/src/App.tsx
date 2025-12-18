@@ -1,5 +1,6 @@
 import {
   DateFieldRange,
+  Flex,
   Button,
   type DateFieldRangeValue,
 } from "@servicetitan/anvil2";
@@ -17,7 +18,7 @@ function App() {
   };
 
   return (
-    <>
+    <Flex gap={4}>
       <DateFieldRange
         value={value}
         onChange={(change) =>
@@ -27,7 +28,7 @@ function App() {
       <Button onClick={() => setValue(valueToSet)}>
         Set to today + 5 days
       </Button>
-    </>
+    </Flex>
   );
 }
 

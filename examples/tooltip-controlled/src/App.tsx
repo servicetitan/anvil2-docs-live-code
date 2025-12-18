@@ -2,10 +2,10 @@ import { Tooltip, Flex, Button } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ paddingBlockStart: "3rem" }}>
       <Flex justifyContent="center">
         <Tooltip open={open}>
           <Tooltip.Trigger>

@@ -1,5 +1,6 @@
 import {
   DateFieldYearless,
+  Flex,
   Button,
   type YearlessDate,
 } from "@servicetitan/anvil2";
@@ -9,7 +10,7 @@ function App() {
   const [value, setValue] = useState<YearlessDate | null>();
 
   return (
-    <>
+    <Flex gap={4}>
       <DateFieldYearless
         value={value}
         onChange={(change) => setValue(change.value)}
@@ -21,7 +22,7 @@ function App() {
       >
         Set to New Year&apos;s Day
       </Button>
-    </>
+    </Flex>
   );
 }
 

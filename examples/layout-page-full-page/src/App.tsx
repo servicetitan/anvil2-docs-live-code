@@ -2,16 +2,16 @@ import { Layout, Page, Card, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div style={{ width: "100vw" }}>
-      <Page style={{ height: "15rem", margin: "-1.5rem" }}>
-        <Page.Sidebar style={{ height: "15rem" }}>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Page style={{ margin: "-1.5rem" }}>
+        <Page.Sidebar>
           <Page.SidebarHeader>
             <Text variant="headline" el="h2">
               Sidebar
             </Text>
           </Page.SidebarHeader>
         </Page.Sidebar>
-        <Page.Content style={{ height: "15rem" }}>
+        <Page.Content>
           <Layout variant="narrow">
             <Layout.Item span={12}>
               <Card

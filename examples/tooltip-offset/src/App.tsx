@@ -2,7 +2,7 @@ import { Tooltip, Card, Button, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div style={{ paddingBlockStart: "4rem", paddingInline: "4rem" }}>
       <Card
         gap={4}
         alignItems="center"
@@ -10,7 +10,7 @@ function App() {
           background: "var(--background-color-inverted-strong)",
         }}
       >
-        <Tooltip offset={24}>
+        <Tooltip offset={24} defaultOpen>
           <Tooltip.Trigger>
             <Button appearance="primary">Hover over me</Button>
           </Tooltip.Trigger>

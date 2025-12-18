@@ -2,9 +2,12 @@ import { Popover, Flex, Text, Button } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div style={{ minHeight: "284px" }}>
-      <Flex justifyContent="center" style={{ paddingTop: "4rem" }}>
-        <Popover placement="top">
+    <div>
+      <Flex
+        justifyContent="center"
+        style={{ paddingBlockStart: "9rem", paddingInline: "7rem" }}
+      >
+        <Popover placement="top" defaultOpen>
           <Popover.Button>Toggle Popover</Popover.Button>
           <Popover.Content>
             <Flex gap="2" direction="column" style={{ maxWidth: "20rem" }}>

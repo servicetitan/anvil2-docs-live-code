@@ -5,7 +5,7 @@ function App() {
   const [checked, setChecked] = useState(false);
 
   return (
-    <Flex justifyContent="space-around">
+    <Flex gap={4} justifyContent="space-around">
       <Switch
         checked={checked}
         onChange={(_e, { checked }) => {

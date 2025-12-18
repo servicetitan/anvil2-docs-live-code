@@ -87,7 +87,7 @@ function App() {
 
   const createNodes = (list: ListItem[], parent?: number) => {
     return (
-      <ul style={{ listStyle: "none" }}>
+      <ul style={{ listStyle: "none", paddingInlineStart: 0 }}>
         {list.map((item, i) => {
           return (
             <li key={i}>

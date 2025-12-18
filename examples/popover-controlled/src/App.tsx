@@ -2,10 +2,10 @@ import { Popover, Flex } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div style={{ minHeight: "284px" }}>
+    <div>
       <Flex justifyContent="center" style={{ paddingTop: "4rem" }}>
         <Popover placement="top" open={isOpen}>
           <Popover.Button onClick={() => setIsOpen((open) => !open)}>

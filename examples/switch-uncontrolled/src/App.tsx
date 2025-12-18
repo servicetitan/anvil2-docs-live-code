@@ -5,7 +5,7 @@ function App() {
   const switchRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Flex justifyContent="space-around">
+    <Flex gap={4} justifyContent="space-around">
       <Switch
         ref={switchRef}
         defaultChecked={false}
