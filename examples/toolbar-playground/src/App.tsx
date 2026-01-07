@@ -47,7 +47,7 @@ function App() {
           </Toolbar.ButtonToggle>
 
           <Toolbar.ButtonLink
-            href="https://v2.anvil.servicetitan.com/"
+            href="https://anvil.servicetitan.com/"
             target="_blank"
             icon={{ before: Warning }}
             appearance="primary"

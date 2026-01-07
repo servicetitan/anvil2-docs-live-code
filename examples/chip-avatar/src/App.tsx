@@ -1,4 +1,6 @@
 import { Chip, Flex } from "@servicetitan/anvil2";
+import dog01 from "../assets/dog-01.png";
+import dog02 from "../assets/dog-02.png";
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
           label="Ben Ho"
           onClose={() => alert("chip close")}
           color="#3e3e5f"
-          avatar="https://anvil.servicetitan.com/dog-01.png"
+          avatar={dog01}
           textWrap
         />
       </div>
@@ -18,7 +20,7 @@ function App() {
           label="Patrick Buckingham"
           onClose={() => alert("chip close")}
           color="#3e3e5f"
-          avatar="https://anvil.servicetitan.com/dog-02.png"
+          avatar={dog02}
           textWrap
         />
       </div>

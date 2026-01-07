@@ -3,7 +3,7 @@ import { Link } from "@servicetitan/anvil2";
 function App() {
   return (
     <Link
-      href="https://v2.anvil.servicetitan.com/"
+      href="https://anvil.servicetitan.com/"
       target="_blank"
       appearance="primary"
       quiet
