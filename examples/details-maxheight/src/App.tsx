@@ -2,7 +2,7 @@ import { Details } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <>
+    <div style={{ maxWidth: "23rem" }}>
       <Details defaultExpanded>
         <Details.Summary>
           <code>maxHeight=&quot;5rem&quot;</code>
@@ -23,7 +23,7 @@ function App() {
           This container shrinks to fit content under <code>80px</code>.
         </Details.Content>
       </Details>
-    </>
+    </div>
   );
 }
 

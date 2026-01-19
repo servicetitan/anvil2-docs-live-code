@@ -2,10 +2,23 @@ import { Alert, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap={4}>
-      <Alert status="info" title="Informational alert" />
-      <Alert status="warning" title="Warning alert" />
-      <Alert status="danger" title="Error alert" />
+    <Flex direction="column" gap="4">
+      <Alert title="Info Alert" onClose={() => console.log("info onClose")} />
+      <Alert
+        title="Success Alert"
+        status="success"
+        onClose={() => console.log("success onClose")}
+      />
+      <Alert
+        title="Warning Alert"
+        status="warning"
+        onClose={() => console.log("warning onClose")}
+      />
+      <Alert
+        title="Danger Alert"
+        status="danger"
+        onClose={() => console.log("danger onClose")}
+      />
     </Flex>
   );
 }

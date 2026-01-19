@@ -6,50 +6,39 @@ type Item = {
   name: string;
 };
 
-const items = [
-  { id: 1, name: "First item" },
-  { id: 2, name: "Second item" },
-  { id: 3, name: "Third item" },
-  { id: 4, name: "Fourth item (default)" },
-  { id: 5, name: "Fifth item" },
-  { id: 6, name: "Sixth item" },
-  { id: 7, name: "Seventh item" },
-  { id: 8, name: "Eighth item" },
-  { id: 9, name: "Ninth item" },
-  { id: 10, name: "Tenth item" },
+const items: Item[] = [
+  { id: 1, name: "Casey Maxwell" },
+  { id: 2, name: "Giovanni Saunders" },
+  { id: 3, name: "Harper Gonzalez" },
+  { id: 4, name: "Jane Doe" },
+  { id: 5, name: "Meadow Hunter" },
 ];
+const defaultItem = items[0];
 
 function App() {
-  const [, setSelectedItem] = useState<Item | null>(items[3]);
+  const [, setSelected] = useState<Item | null>();
 
   return (
-    <div style={{ minWidth: "384px", minHeight: "284px" }}>
-      <Combobox
-        items={items}
-        itemToString={(item) => (item ? item.name : "")}
-        itemToKey={(item) => (item ? item.id : null)}
-        defaultSelectedItem={items[3]}
-        onChange={setSelectedItem}
-        filterOptions={{ keys: ["name"] }}
-        defaultIsOpen
-      >
-        <Combobox.SearchField
-          label="Select an item (single)"
-          description="This is a Combobox.SearchField"
-        />
-        <Combobox.Content>
-          {({ items }) => (
-            <Combobox.List>
-              {items.map((item, i) => (
-                <Combobox.Item key={item.id} item={item} index={i}>
-                  {item.name}
-                </Combobox.Item>
-              ))}
-            </Combobox.List>
-          )}
-        </Combobox.Content>
-      </Combobox>
-    </div>
+    <Combobox
+      items={items}
+      itemToString={(item) => (item ? item.name : "")}
+      onChange={setSelected}
+      filterOptions={{ keys: ["name"] }}
+      defaultSelectedItem={defaultItem}
+    >
+      <Combobox.SearchField label="Select Teammate" />
+      <Combobox.Content>
+        {({ items }) => (
+          <Combobox.List>
+            {items.map((item, i) => (
+              <Combobox.Item key={item.id} item={item} index={i}>
+                {item.name}
+              </Combobox.Item>
+            ))}
+          </Combobox.List>
+        )}
+      </Combobox.Content>
+    </Combobox>
   );
 }
 

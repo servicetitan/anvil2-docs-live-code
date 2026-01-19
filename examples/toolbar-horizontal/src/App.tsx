@@ -1,0 +1,64 @@
+import { Toolbar } from "@servicetitan/anvil2";
+
+function App() {
+  return (
+    <div style={{ padding: "20px" }}>
+      <div>
+        <Toolbar associatedContent="basic toolbar" direction="horizontal">
+          <Toolbar.Button
+            onClick={() => console.log("File button default clicked")}
+          >
+            File
+          </Toolbar.Button>
+          <Toolbar.Button
+            appearance="primary"
+            onClick={() => console.log("File button default clicked")}
+          >
+            File
+          </Toolbar.Button>
+
+          <Toolbar.ButtonToggle
+            defaultChecked
+            onClick={() =>
+              console.log("Bold button toggle uncontrolled clicked")
+            }
+          >
+            Bold
+          </Toolbar.ButtonToggle>
+
+          <Toolbar.ButtonLink
+            href="#"
+            onClick={() => console.log("View Report default clicked")}
+          >
+            View Report
+          </Toolbar.ButtonLink>
+
+          <Toolbar.Select
+            accessibleLabel="Status"
+            appearance="primary"
+            items={[
+              { id: "status1", label: "Active" },
+              { id: "status2", label: "Pending" },
+              { id: "status3", label: "Completed" },
+              { id: "status4", label: "Cancelled", disabled: true },
+            ]}
+            onChange={() => console.log("Status select changed")}
+          />
+
+          <Toolbar.Select
+            accessibleLabel="Status"
+            items={[
+              { id: "status1", label: "Active" },
+              { id: "status2", label: "Pending" },
+              { id: "status3", label: "Completed" },
+              { id: "status4", label: "Cancelled", disabled: true },
+            ]}
+            onChange={() => console.log("Status select changed")}
+          />
+        </Toolbar>
+      </div>
+    </div>
+  );
+}
+
+export default App;

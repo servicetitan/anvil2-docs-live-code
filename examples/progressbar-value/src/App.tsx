@@ -2,10 +2,10 @@ import { ProgressBar, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap="8" style={{ minWidth: "20.5rem" }}>
-      <ProgressBar value={25} label="Value 25/100" />
-      <ProgressBar value={3} max={4} label="Value 3/4" />
-      <ProgressBar value="100" label="Value 100/100" />
+    <Flex direction="column" gap="8" grow={1}>
+      <ProgressBar label="Value of 0" value="0" />
+      <ProgressBar label="Value of 50" value="50" />
+      <ProgressBar label="Value of 100" value="100" />
     </Flex>
   );
 }

@@ -1,13 +1,18 @@
-import { Announcement, Button } from "@servicetitan/anvil2";
+import { Announcement, Flex, Button } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Announcement
-      status="warning"
-      title="You have no credit card specified. Please add it before your service is suspended in 3 days."
-    >
-      <Button size="small">Add Credit Card</Button>
-    </Announcement>
+    <Flex direction="column" gap={4}>
+      <Announcement title="Info announcement">
+        <Button size="small">Button</Button>
+      </Announcement>
+      <Announcement status="warning" title="Warning announcement">
+        <Button size="small">Button</Button>
+      </Announcement>
+      <Announcement status="danger" title="Danger announcement">
+        <Button size="small">Button</Button>
+      </Announcement>
+    </Flex>
   );
 }
 

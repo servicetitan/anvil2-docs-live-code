@@ -2,7 +2,7 @@ import { Details } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <>
+    <div style={{ maxWidth: "23rem" }}>
       <Details>
         <Details.Summary>Click to see details.</Details.Summary>
         <Details.Content>
@@ -21,7 +21,7 @@ function App() {
           aliquip ex ea commodo consequat.
         </Details.Content>
       </Details>
-    </>
+    </div>
   );
 }
 

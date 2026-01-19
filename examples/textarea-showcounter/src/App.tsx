@@ -1,7 +1,7 @@
 import { Textarea } from "@servicetitan/anvil2";
 
 function App() {
-  return <Textarea label="Label" maxLength={180} showCounter />;
+  return <Textarea label="Label" showCounter maxLength={100} />;
 }
 
 export default App;

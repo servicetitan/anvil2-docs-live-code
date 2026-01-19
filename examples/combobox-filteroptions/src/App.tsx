@@ -1,0 +1,46 @@
+import { Combobox } from "@servicetitan/anvil2";
+import { useState } from "react";
+
+type Item = {
+  id: number;
+  name: string;
+};
+
+const items: Item[] = [
+  { id: 1, name: "Apple" },
+  { id: 2, name: "Banana" },
+  { id: 3, name: "Grapefruit" },
+  { id: 4, name: "Orange" },
+  { id: 5, name: "Pomegranate" },
+];
+
+function App() {
+  const [, setSelected] = useState<Item | null>();
+
+  return (
+    <div style={{ minWidth: "384px", minHeight: "284px" }}>
+      <Combobox
+        items={items}
+        itemToString={(item) => (item ? item.name : "")}
+        onChange={setSelected}
+        filterOptions={{ keys: ["name"] }}
+        defaultIsOpen
+      >
+        <Combobox.SearchField label="Select Fruit" />
+        <Combobox.Content>
+          {({ items }) => (
+            <Combobox.List>
+              {items.map((item, i) => (
+                <Combobox.Item key={item.id} item={item} index={i}>
+                  {item.name}
+                </Combobox.Item>
+              ))}
+            </Combobox.List>
+          )}
+        </Combobox.Content>
+      </Combobox>
+    </div>
+  );
+}
+
+export default App;

@@ -1,17 +1,13 @@
-import { Alert, Button } from "@servicetitan/anvil2";
+import { Alert, Flex, Button } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <>
+    <Flex direction="column" gap="4">
       {isOpen ? (
-        <Alert
-          status="warning"
-          title="Closeable Alert"
-          onClose={() => setIsOpen(false)}
-        />
+        <Alert title="Closeable Alert" onClose={() => setIsOpen(false)} />
       ) : (
         <Button
           size="large"
@@ -21,7 +17,9 @@ function App() {
           Open Alert
         </Button>
       )}
-    </>
+
+      <Alert title="Alert without onClose" />
+    </Flex>
   );
 }
 
