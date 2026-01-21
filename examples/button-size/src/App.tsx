@@ -6,6 +6,7 @@ function App() {
       <Button size="large">Large</Button>
       <Button>Medium</Button>
       <Button size="small">Small</Button>
+      <Button size="xsmall">Extra Small</Button>
     </Grid>
   );
 }
