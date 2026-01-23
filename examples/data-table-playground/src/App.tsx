@@ -54,9 +54,23 @@ const data: TableRow<OrderData>[] = [
   {
     id: "ORD-2024-005",
     amount: 0.0,
-    status: ["shipped", "cancelled"],
+    status: ["cancelled"],
     order_date: "09/10/2024",
     payment_type: "credit_card",
+  },
+  {
+    id: "ORD-2024-006",
+    amount: 8925.0,
+    status: ["completed"],
+    order_date: "08/28/2024",
+    payment_type: "check",
+  },
+  {
+    id: "ORD-2024-007",
+    amount: 45.99,
+    status: ["shipped"],
+    order_date: "09/21/2024",
+    payment_type: "cash",
   },
 ];
 

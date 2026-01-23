@@ -74,13 +74,6 @@ const initialData: TableRow<OrderData>[] = [
     payment_type: "cash",
     categories: ["clothing", "home"],
   },
-  {
-    id: "ORD-2024-008",
-    customer_name: "Roberto Silva",
-    status: ["processing"],
-    payment_type: "bank_transfer",
-    categories: ["electronics", "other"],
-  },
 ];
 
 function App() {

@@ -72,32 +72,12 @@ const data: TableRow<OrderData>[] = [
     order_date: "09/21/2024",
     payment_type: "cash",
   },
-  {
-    id: "ORD-2024-008",
-    amount: 3780.25,
-    status: ["processing"],
-    order_date: "09/19/2024",
-    payment_type: "bank_transfer",
-  },
-  {
-    id: "ORD-2024-009",
-    amount: 156.78,
-    status: ["completed"],
-    order_date: "09/14/2024",
-    payment_type: "paypal",
-  },
-  {
-    id: "ORD-2024-010",
-    amount: 2100.0,
-    status: ["shipped", "cancelled"],
-    order_date: "09/22/2024",
-    payment_type: "credit_card",
-  },
 ];
 
 const createColumn = createColumnHelper<OrderData>();
 
-const columns = [
+// Define individual columns that will be grouped
+const orderInfoColumns = [
   createColumn("id", {
     headerLabel: "Order ID",
     sortable: true,
@@ -109,21 +89,9 @@ const columns = [
       </span>
     ),
   }),
-  createColumn("amount", {
-    headerLabel: "Amount",
-    renderCell: (value) => currencyFormatter(value),
+  createColumn("order_date", {
+    headerLabel: "Order Date",
     sortable: true,
-    footerContent: [
-      <span key="total">
-        {currencyFormatter(data.reduce((acc, row) => acc + row.amount, 0))}
-      </span>,
-      <span key="average">
-        {currencyFormatter(
-          data.reduce((acc, row) => acc + row.amount, 0) / data.length,
-        )}{" "}
-        (avg)
-      </span>,
-    ],
   }),
   createColumn("status", {
     headerLabel: "Status",
@@ -162,9 +130,24 @@ const columns = [
       return statusA - statusB;
     },
   }),
-  createColumn("order_date", {
-    headerLabel: "Order Date",
+];
+
+const paymentColumns = [
+  createColumn("amount", {
+    headerLabel: "Amount",
+    renderCell: (value) => currencyFormatter(value),
     sortable: true,
+    footerContent: [
+      <span key="total">
+        {currencyFormatter(data.reduce((acc, row) => acc + row.amount, 0))}
+      </span>,
+      <span key="average">
+        {currencyFormatter(
+          data.reduce((acc, row) => acc + row.amount, 0) / data.length,
+        )}{" "}
+        (avg)
+      </span>,
+    ],
   }),
   createColumn("payment_type", {
     headerLabel: "Payment Type",
@@ -188,16 +171,26 @@ const columns = [
   }),
 ];
 
+// Create grouped columns using the group syntax
+const groupedColumns = [
+  createColumn(
+    { group: "order_info" },
+    {
+      headerLabel: "Order Info",
+      columns: orderInfoColumns,
+    },
+  ),
+  createColumn(
+    { group: "payment_details" },
+    {
+      headerLabel: "Payment Details",
+      columns: paymentColumns,
+    },
+  ),
+];
+
 function App() {
-  return (
-    <DataTable
-      data={data}
-      columns={columns.map((column, index) => ({
-        ...column,
-        pinned: index === 0 ? "left" : index === 4 ? "right" : undefined,
-      }))}
-    />
-  );
+  return <DataTable data={data} columns={groupedColumns} />;
 }
 
 export default App;

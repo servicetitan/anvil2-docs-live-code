@@ -91,33 +91,6 @@ const data: TableRow<OrderData>[] = [
     order_date: "09/21/2024",
     payment_type: "cash",
   },
-  {
-    id: "ORD-2024-008",
-    amount: 3780.25,
-    customer_name: "Roberto Silva",
-    items: 23,
-    status: ["processing"],
-    order_date: "09/19/2024",
-    payment_type: "bank_transfer",
-  },
-  {
-    id: "ORD-2024-009",
-    amount: 156.78,
-    customer_name: "Emily Watson",
-    items: 4,
-    status: ["completed"],
-    order_date: "09/14/2024",
-    payment_type: "paypal",
-  },
-  {
-    id: "ORD-2024-010",
-    amount: 2100.0,
-    customer_name: "Moonlight Café",
-    items: 35,
-    status: ["shipped", "cancelled"],
-    order_date: "09/22/2024",
-    payment_type: "credit_card",
-  },
 ];
 
 const createColumn = createColumnHelper<OrderData>();
