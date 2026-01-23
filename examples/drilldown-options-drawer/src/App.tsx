@@ -5,34 +5,26 @@ import {
   Button,
   Flex,
 } from "@servicetitan/anvil2";
-import { useEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 
 function App() {
   const { drillDownProps, setIndex, back, next } = useDrillDown();
-  const [currentIndex, setCurrentIndex] = useState<number | undefined>(
-    undefined,
-  );
 
-  // Set the initial index
-  useEffect(() => {
-    setIndex(1);
-    setCurrentIndex(1);
+  // Set the initial index after components have registered
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      setIndex(1);
+    }, 400);
   }, [setIndex]);
-
-  // Track index changes
-  const handleSetIndex = (index: number) => {
-    setIndex(index);
-    setCurrentIndex(index);
-  };
 
   return (
     <Drawer {...drillDownProps} open size="medium" defaultDrillDownIndex={1}>
-      {currentIndex == null && <Drawer.Header>Drawer Header</Drawer.Header>}
+      <Drawer.Header>Drawer Header</Drawer.Header>
       <Drawer.Content>
         <Flex direction="column" gap="2">
           <div>This is the drawer body content.</div>
-          <Button onClick={() => handleSetIndex(0)}>Set index to 0</Button>
-          <Button onClick={() => handleSetIndex(1)}>Set index to 1</Button>
+          <Button onClick={() => setIndex(0)}>Set index to 0</Button>
+          <Button onClick={() => setIndex(1)}>Set index to 1</Button>
         </Flex>
       </Drawer.Content>
       <Drawer.Footer>

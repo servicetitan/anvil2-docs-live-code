@@ -5,30 +5,17 @@ import {
   Button,
   Flex,
 } from "@servicetitan/anvil2";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 
 function App() {
   const { drillDownProps, setIndex, back, next } = useDrillDown();
-  const [currentIndex, setCurrentIndex] = useState<number | undefined>(
-    undefined,
-  );
 
   // Set the initial index after components have registered
-  // Use useLayoutEffect with requestAnimationFrame to ensure we're after registration
   useLayoutEffect(() => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setIndex(1);
-        setCurrentIndex(1);
-      });
-    });
+    setTimeout(() => {
+      setIndex(1);
+    }, 400);
   }, [setIndex]);
-
-  // Track index changes
-  const handleSetIndex = (index: number) => {
-    setIndex(index);
-    setCurrentIndex(index);
-  };
 
   return (
     <div style={{ width: "100vw", minWidth: "23rem" }}>
@@ -41,19 +28,13 @@ function App() {
           size="medium"
           defaultDrillDownIndex={1}
         >
-          {currentIndex == null && (
-            <div>
-              <div>This is the panel body content.</div>
-              <Flex direction="column" gap="2" style={{ marginTop: "1rem" }}>
-                <Button onClick={() => handleSetIndex(0)}>
-                  Set index to 0
-                </Button>
-                <Button onClick={() => handleSetIndex(1)}>
-                  Set index to 1
-                </Button>
-              </Flex>
-            </div>
-          )}
+          <div>
+            <div>This is the panel body content.</div>
+            <Flex direction="column" gap="2" style={{ marginTop: "1rem" }}>
+              <Button onClick={() => setIndex(0)}>Set index to 0</Button>
+              <Button onClick={() => setIndex(1)}>Set index to 1</Button>
+            </Flex>
+          </div>
 
           <DrillDown index={0}>
             <DrillDown.Header>DrillDown Index 0</DrillDown.Header>
