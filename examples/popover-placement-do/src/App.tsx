@@ -13,7 +13,7 @@ function App() {
             rowGap: "150px",
           }}
         >
-          <Popover placement="bottom-start" open disableFocusLock>
+          <Popover placement="bottom-start" open modal>
             <Popover.Button data-interactive="active">Button</Popover.Button>
             <Popover.Content
               style={{ display: "flex", flexDirection: "column" }}
@@ -27,7 +27,7 @@ function App() {
 
           <Button>Button</Button>
           <Button>Button</Button>
-          <Popover placement="bottom-end" open disableFocusLock>
+          <Popover placement="bottom-end" open modal>
             <Popover.Button data-interactive="active">Button</Popover.Button>
             <Popover.Content
               style={{ display: "flex", flexDirection: "column" }}

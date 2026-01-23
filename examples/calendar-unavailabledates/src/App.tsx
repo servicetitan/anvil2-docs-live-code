@@ -5,13 +5,15 @@ function App() {
     <Flex alignItems="center" direction="column">
       <Calendar
         focusedDate="2024-06-01"
-        unavailableDates={[
-          "2024-06-02",
-          "2024-06-04",
-          "2024-06-06",
-          "2024-06-08",
-          "2024-06-10",
-        ]}
+        unavailable={{
+          dates: [
+            "2024-06-02",
+            "2024-06-04",
+            "2024-06-06",
+            "2024-06-08",
+            "2024-06-10",
+          ],
+        }}
       />
     </Flex>
   );

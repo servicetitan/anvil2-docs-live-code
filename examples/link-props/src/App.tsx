@@ -6,7 +6,7 @@ function App() {
       <Link>Primary Link</Link>
       <Link target="_blank">External Link</Link>
       <Link appearance="secondary">Secondary Link</Link>
-      <Link quiet>Quiet Link</Link>
+      <Link ghost>Ghost Link</Link>
     </Flex>
   );
 }

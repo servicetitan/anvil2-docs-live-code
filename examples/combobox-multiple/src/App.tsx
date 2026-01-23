@@ -18,7 +18,7 @@ function App() {
   const [, setSelected] = useState<Item[] | null>([]);
 
   return (
-    <div style={{ minWidth: "384px", minHeight: "284px" }}>
+    <div style={{ minWidth: "384px", minHeight: "300px" }}>
       <Combobox
         items={items}
         itemToString={(item) => (item ? item.name : "")}

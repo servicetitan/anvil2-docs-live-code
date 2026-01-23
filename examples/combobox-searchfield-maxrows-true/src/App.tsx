@@ -35,29 +35,7 @@ function App() {
   const [, setSelected] = useState<Item[] | null>();
 
   return (
-    <Flex gap={6} direction="column">
-      <Combobox
-        items={items}
-        itemToString={(item) => item?.name ?? ""}
-        onChange={setSelected}
-        filterOptions={{ keys: ["name"] }}
-        multiple
-        defaultSelectedItems={defaultItems}
-      >
-        <Combobox.SearchField label="Select Fruit" maxRows={1} />
-        <Combobox.Content>
-          {({ items }) => (
-            <Combobox.List>
-              {items.map((item, i) => (
-                <Combobox.Item key={item.id} item={item} index={i}>
-                  {item.name}
-                </Combobox.Item>
-              ))}
-            </Combobox.List>
-          )}
-        </Combobox.Content>
-      </Combobox>
-
+    <Flex gap={6} direction="column" style={{ maxWidth: "500px" }}>
       <Combobox
         items={items}
         itemToString={(item) => item?.name ?? ""}

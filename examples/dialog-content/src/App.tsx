@@ -3,7 +3,6 @@ import {
   Grid,
   Text,
   TextField,
-  RadioGroup,
   Radio,
   Flex,
   Button,
@@ -25,11 +24,11 @@ function App() {
             <TextField label="Label" />
             <TextField label="Label" />
 
-            <RadioGroup legend="Radio group header">
+            <Radio.Group legend="Radio group header">
               <Radio name="role" value="designer" label="Apple" />
               <Radio name="role" value="developer" label="Banana" />
               <Radio name="role" value="pm" label="Carrot" />
-            </RadioGroup>
+            </Radio.Group>
           </Grid>
         </Dialog.Content>
         <Dialog.Footer>

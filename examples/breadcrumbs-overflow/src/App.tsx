@@ -2,7 +2,12 @@ import { Breadcrumbs, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex gap="6" direction="column" alignItems="baseline">
+    <Flex
+      gap="6"
+      direction="column"
+      alignItems="baseline"
+      style={{ maxWidth: "30rem" }}
+    >
       <Breadcrumbs>
         <Breadcrumbs.Link href="#">Item 1</Breadcrumbs.Link>
         <Breadcrumbs.Link href="#">Item 2</Breadcrumbs.Link>

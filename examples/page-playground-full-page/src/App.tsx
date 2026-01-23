@@ -2,7 +2,6 @@ import {
   Page,
   Text,
   SideNav,
-  SideNavLink,
   Link,
   Layout,
   Flex,
@@ -44,15 +43,15 @@ function App() {
             </Text>
           </Page.SidebarHeader>
           <SideNav>
-            <SideNavLink id="01" href="#" active>
+            <SideNav.Link id="01" href="#" active>
               First Link
-            </SideNavLink>
-            <SideNavLink id="02" href="#">
+            </SideNav.Link>
+            <SideNav.Link id="02" href="#">
               Second Link
-            </SideNavLink>
-            <SideNavLink id="03" href="#">
+            </SideNav.Link>
+            <SideNav.Link id="03" href="#">
               Third Link
-            </SideNavLink>
+            </SideNav.Link>
           </SideNav>
         </Page.Sidebar>
 

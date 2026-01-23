@@ -5,7 +5,6 @@ import {
   Grid,
   TextField,
   Radio,
-  RadioGroup,
 } from "@servicetitan/anvil2";
 
 function App() {
@@ -31,11 +30,11 @@ function App() {
       <EditCard headerText="Edit Card" state="in progress">
         <Grid gap="6">
           <TextField label="Name" />
-          <RadioGroup legend="Notification Frequency">
+          <Radio.Group legend="Notification Frequency">
             <Radio name="ex1" value="daily" label="Daily" />
             <Radio name="ex1" value="weekly" label="Weekly" defaultChecked />
             <Radio name="ex1" value="monthly" label="Monthly" />
-          </RadioGroup>
+          </Radio.Group>
         </Grid>
       </EditCard>
     </Flex>

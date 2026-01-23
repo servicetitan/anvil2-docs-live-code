@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Breadcrumbs>
+    <Breadcrumbs style={{ maxWidth: "30rem" }}>
       <Breadcrumbs.Link href="#">Item 1</Breadcrumbs.Link>
       <Breadcrumbs.Link href="#">Longer Item</Breadcrumbs.Link>
       <Breadcrumbs.Link href="#">

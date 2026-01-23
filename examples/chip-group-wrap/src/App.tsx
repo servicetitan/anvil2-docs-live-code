@@ -2,7 +2,7 @@ import { Chip, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap={8}>
+    <Flex direction="column" gap={8} style={{ maxWidth: "455px" }}>
       <Flex gap={2} style={{ flexWrap: "wrap" }}>
         <Chip label="Chip" size="medium" />
         <Chip label="Longer Chip name" size="medium" />

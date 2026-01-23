@@ -5,7 +5,7 @@ function App() {
   const [selectedDays, setSelectedDays] = useState<number[]>([]);
 
   return (
-    <Flex style={{ minHeight: "97px" }} alignItems="center">
+    <Flex style={{ minHeight: "97px", width: "328px" }} alignItems="center">
       <DaysOfTheWeek
         selectedDays={selectedDays}
         onChange={setSelectedDays}

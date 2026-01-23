@@ -1,4 +1,9 @@
-import { TextField, DateField, Flex, Divider } from "@servicetitan/anvil2";
+import {
+  TextField,
+  DateFieldSingle,
+  Flex,
+  Divider,
+} from "@servicetitan/anvil2";
 
 function App() {
   return (
@@ -12,7 +17,7 @@ function App() {
 
       <Divider />
 
-      <DateField
+      <DateFieldSingle
         defaultValue={new Date().toISOString()}
         label="DateField Label"
         description="DateField has this built in too!"

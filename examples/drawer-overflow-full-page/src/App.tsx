@@ -1,4 +1,5 @@
 import { Drawer, Link, Flex, Button } from "@servicetitan/anvil2";
+import { core } from "@servicetitan/anvil2/token";
 
 function App() {
   return (
@@ -7,12 +8,17 @@ function App() {
         Drawer Title that Will Overflow to Another Line with Enough Words
       </Drawer.Header>
       <Drawer.Content>Body text in the Drawer.</Drawer.Content>
-      <Drawer.Footer style={{ flexWrap: "wrap" }} sticky>
+      <Drawer.Footer
+        style={{
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+        sticky
+      >
         <Link
           style={{
-            alignSelf: "center",
-            flexGrow: "1",
-            justifyContent: "flex-end",
+            marginTop: core.primitive?.Size2?.value,
+            marginBottom: core.primitive?.Size2?.value,
           }}
         >
           Learn more

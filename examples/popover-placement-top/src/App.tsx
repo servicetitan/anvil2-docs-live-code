@@ -21,7 +21,7 @@ function App() {
             <Popover
               disableShift
               disableFlip
-              disableFocusLock
+              modal
               open
               placement={placement}
               key={placement}

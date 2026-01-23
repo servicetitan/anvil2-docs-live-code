@@ -1,8 +1,8 @@
-import { Divider, Checkbox, CheckboxGroup } from "@servicetitan/anvil2";
+import { Divider, Checkbox } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <CheckboxGroup legend="What support do you need?">
+    <Checkbox.Group legend="What support do you need?">
       <Divider />
       <Checkbox name="support" value="software" label="Software" />
       <Divider />
@@ -10,7 +10,7 @@ function App() {
       <Divider />
       <Checkbox name="support" value="report" label="Expense Report" />
       <Divider />
-    </CheckboxGroup>
+    </Checkbox.Group>
   );
 }
 

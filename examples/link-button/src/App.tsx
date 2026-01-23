@@ -5,7 +5,7 @@ function App() {
     <Flex gap={4} justifyContent="space-around">
       <LinkButton>Primary Link Button</LinkButton>
       <LinkButton appearance="secondary">Secondary Link Button</LinkButton>
-      <LinkButton quiet>Quiet Link Button</LinkButton>
+      <LinkButton ghost>Quiet Link Button</LinkButton>
     </Flex>
   );
 }

@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div style={{ minWidth: "20.5rem" }}>
+    <div style={{ minWidth: "55rem" }}>
       <Stepper>
         <Stepper.List>
           <Stepper.Step id="t1" controls="p1">

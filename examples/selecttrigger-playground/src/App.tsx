@@ -2,7 +2,6 @@ import {
   SelectTrigger,
   Flex,
   Dialog,
-  CheckboxGroup,
   Checkbox,
   Button,
   type CheckboxProps,
@@ -90,7 +89,7 @@ function App() {
           <Dialog.Header>Dialog Header</Dialog.Header>
 
           <Dialog.Content>
-            <CheckboxGroup legend="Choose item(s)" required>
+            <Checkbox.Group legend="Choose item(s)" required>
               {items.map((item) => (
                 <Checkbox
                   key={item.name}
@@ -100,7 +99,7 @@ function App() {
                   onClick={handleCheckboxClick}
                 />
               ))}
-            </CheckboxGroup>
+            </Checkbox.Group>
           </Dialog.Content>
 
           <Dialog.Footer>

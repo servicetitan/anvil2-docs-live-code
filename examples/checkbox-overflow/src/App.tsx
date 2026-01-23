@@ -1,11 +1,11 @@
-import { Checkbox, CheckboxGroup } from "@servicetitan/anvil2";
+import { Checkbox } from "@servicetitan/anvil2";
 
 function App() {
   return (
     <div style={{ width: "165px" }}>
-      <CheckboxGroup legend="A longer legend that will wrap">
+      <Checkbox.Group legend="A longer legend that will wrap">
         <Checkbox label="Subscribe to weekly newsletter" />
-      </CheckboxGroup>
+      </Checkbox.Group>
     </div>
   );
 }

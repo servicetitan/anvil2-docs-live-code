@@ -1,4 +1,4 @@
-import { Radio, RadioGroup, type RadioState } from "@servicetitan/anvil2";
+import { Radio, type RadioState } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <RadioGroup legend="Preferred communication method" required>
+    <Radio.Group legend="Preferred communication method" required>
       {list.map((item, i) => {
         return (
           <Radio
@@ -34,7 +34,7 @@ function App() {
           />
         );
       })}
-    </RadioGroup>
+    </Radio.Group>
   );
 }
 

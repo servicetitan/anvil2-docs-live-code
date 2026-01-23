@@ -19,7 +19,7 @@ function App() {
   const [, setSelected] = useState<Item[] | null>();
 
   return (
-    <Flex gap={6} direction="column">
+    <Flex gap={6} direction="column" style={{ maxWidth: "500px" }}>
       <Combobox
         items={items}
         itemToString={(item) => (item ? item.name : "")}

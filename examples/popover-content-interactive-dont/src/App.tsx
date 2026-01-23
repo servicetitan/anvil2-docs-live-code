@@ -15,7 +15,7 @@ function App() {
           }}
         >
           <Button>Cancel</Button>
-          <Popover placement="top-end" open disableFocusLock>
+          <Popover placement="top-end" open modal>
             <Popover.Button disabled appearance="primary">
               Submit
             </Popover.Button>

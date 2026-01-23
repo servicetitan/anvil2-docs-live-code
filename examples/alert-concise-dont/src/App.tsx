@@ -2,7 +2,11 @@ import { Alert } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Alert status="warning" title="Document theme limit has been reached">
+    <Alert
+      status="warning"
+      title="Document theme limit has been reached"
+      style={{ maxWidth: "35rem" }}
+    >
       You have reached your theme limit. Your document template has reached its
       maximum of 20 themes. To add more themes, delete themes you’re no longer
       using.

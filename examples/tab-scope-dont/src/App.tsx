@@ -2,7 +2,7 @@ import { Tab, Text, Button } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div style={{ minWidth: "23rem", padding: 24 }}>
+    <div style={{ minWidth: "55rem", padding: 24 }}>
       <Tab defaultIndex={0}>
         <Tab.Panel id="p1">
           <div

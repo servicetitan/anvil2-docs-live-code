@@ -3,7 +3,7 @@ import { core } from "@servicetitan/anvil2/token";
 
 function App() {
   return (
-    <Tab defaultIndex={0}>
+    <Tab defaultIndex={0} style={{ minWidth: "55rem" }}>
       <Tab.List>
         <Tab.Button id="t1" controls="p1" onClick={console.log}>
           <Flex gap={2} alignItems="center">

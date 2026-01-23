@@ -2,7 +2,7 @@ import { Tab } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Tab defaultIndex={0}>
+    <Tab defaultIndex={0} style={{ minWidth: "55rem" }}>
       <Tab.List>
         <Tab.Button id="t5" controls="p1" onClick={console.log}>
           Tab A

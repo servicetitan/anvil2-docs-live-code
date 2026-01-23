@@ -3,7 +3,6 @@ import {
   Grid,
   TextField,
   Radio,
-  RadioGroup,
   Flex,
   Text,
   type EditCardState,
@@ -62,7 +61,7 @@ function App() {
     <Grid gap="6">
       <TextField label="Name" value={inputValue} onChange={handleInputChange} />
 
-      <RadioGroup legend="Preferred communication method">
+      <Radio.Group legend="Preferred communication method">
         {list.map((item, i) => {
           return (
             <Radio
@@ -76,7 +75,7 @@ function App() {
             />
           );
         })}
-      </RadioGroup>
+      </Radio.Group>
     </Grid>
   );
 

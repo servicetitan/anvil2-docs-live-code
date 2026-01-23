@@ -1,4 +1,4 @@
-import { Overflow, RadioGroup, Radio } from "@servicetitan/anvil2";
+import { Overflow, Radio } from "@servicetitan/anvil2";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         collapseText: "Show less...",
       }}
     >
-      <RadioGroup legend="Choose fruit(s)" required>
+      <Radio.Group legend="Choose fruit(s)" required>
         <Radio name="fruit" value="Citron" label="Citron" />
         <Radio name="fruit" value="Clementine" label="Clementine" />
         <Radio name="fruit" value="Grapefruit" label="Grapefruit" />
@@ -27,7 +27,7 @@ function App() {
         <Radio name="fruit" value="Ugli" label="Ugli" />
         <Radio name="fruit" value="Tangor" label="Tangor" />
         <Radio name="fruit" value="Yuzu" label="Yuzu" />
-      </RadioGroup>
+      </Radio.Group>
     </Overflow>
   );
 }

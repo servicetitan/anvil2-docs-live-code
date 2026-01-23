@@ -2,7 +2,6 @@ import {
   SelectTrigger,
   Flex,
   Dialog,
-  CheckboxGroup,
   Grid,
   Checkbox,
   Button,
@@ -101,7 +100,7 @@ function App() {
           <Dialog.Header>Dialog Header</Dialog.Header>
 
           <Dialog.Content>
-            <CheckboxGroup legend="Choose item(s)" required flexGrow="1">
+            <Checkbox.Group legend="Choose item(s)" required flexGrow="1">
               <Grid templateColumns="repeat(2, 1fr)" gap="1">
                 {items.map((item) => (
                   <Checkbox
@@ -113,7 +112,7 @@ function App() {
                   />
                 ))}
               </Grid>
-            </CheckboxGroup>
+            </Checkbox.Group>
           </Dialog.Content>
 
           <Dialog.Footer>

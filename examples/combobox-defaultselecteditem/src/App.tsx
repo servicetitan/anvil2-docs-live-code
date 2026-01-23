@@ -25,6 +25,7 @@ function App() {
       onChange={setSelected}
       filterOptions={{ keys: ["name"] }}
       defaultSelectedItem={defaultItem}
+      style={{ minWidth: "260px" }}
     >
       <Combobox.SearchField label="Select Teammate" />
       <Combobox.Content>

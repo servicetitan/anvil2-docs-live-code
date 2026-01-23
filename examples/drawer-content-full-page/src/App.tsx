@@ -1,11 +1,4 @@
-import {
-  Drawer,
-  Flex,
-  TextField,
-  Radio,
-  RadioGroup,
-  Button,
-} from "@servicetitan/anvil2";
+import { Drawer, Flex, TextField, Radio, Button } from "@servicetitan/anvil2";
 
 function App() {
   return (
@@ -16,11 +9,11 @@ function App() {
           <TextField label="First Name" />
           <TextField label="Last Name" />
           <TextField label="Email Address" />
-          <RadioGroup legend="My function is">
+          <Radio.Group legend="My function is">
             <Radio name="role" value="designer" label="Designer" />
             <Radio name="role" value="developer" label="Developer" />
             <Radio name="role" value="pm" label="Product Manager" />
-          </RadioGroup>
+          </Radio.Group>
         </Flex>
       </Drawer.Content>
       <Drawer.Footer sticky>

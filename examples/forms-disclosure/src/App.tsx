@@ -1,11 +1,11 @@
-import { Radio, RadioGroup, TextField } from "@servicetitan/anvil2";
+import { Radio, TextField } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
   const [radioState, setRadioState] = useState("other");
 
   return (
-    <RadioGroup legend="I am a...">
+    <Radio.Group legend="I am a...">
       <Radio
         name="exampleRadioOther"
         value="software"
@@ -42,7 +42,7 @@ function App() {
           <TextField />{" "}
         </div>
       )}
-    </RadioGroup>
+    </Radio.Group>
   );
 }
 

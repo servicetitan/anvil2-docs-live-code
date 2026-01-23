@@ -2,7 +2,7 @@ import { Tab, Flex, Alert } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap={2}>
+    <Flex direction="column" gap={2} style={{ minWidth: "55rem" }}>
       <Alert
         title="Error Alert scoped above the Tab"
         status="danger"

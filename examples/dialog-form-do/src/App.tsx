@@ -2,7 +2,6 @@ import {
   Dialog,
   Grid,
   TextField,
-  RadioGroup,
   Radio,
   Flex,
   Button,
@@ -17,10 +16,10 @@ function App() {
           <Grid gap="6">
             <TextField label="Email Address" />
 
-            <RadioGroup legend="Permissions">
+            <Radio.Group legend="Permissions">
               <Radio name="role" value="edit" label="Can view" checked />
               <Radio name="role" value="view" label="Can edit" />
-            </RadioGroup>
+            </Radio.Group>
           </Grid>
         </Dialog.Content>
         <Dialog.Footer>

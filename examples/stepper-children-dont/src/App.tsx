@@ -2,7 +2,7 @@ import { Stepper, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap="10" style={{ minWidth: "20.5rem" }}>
+    <Flex direction="column" gap="10" style={{ minWidth: "55rem" }}>
       <Stepper>
         <Stepper.List>
           <Stepper.Step id="t0" controls="p0">

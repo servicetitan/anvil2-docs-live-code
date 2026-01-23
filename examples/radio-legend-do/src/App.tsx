@@ -1,8 +1,8 @@
-import { Radio, RadioGroup, Flex, Text } from "@servicetitan/anvil2";
+import { Radio, Flex, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <RadioGroup
+    <Radio.Group
       legend={
         <Flex direction="column" gap="0">
           <Text variant="headline" el="h3" size="small">
@@ -22,7 +22,7 @@ function App() {
         defaultChecked
       />
       <Radio name="c1" value="b" label="Apply to vehicle groups" />
-    </RadioGroup>
+    </Radio.Group>
   );
 }
 

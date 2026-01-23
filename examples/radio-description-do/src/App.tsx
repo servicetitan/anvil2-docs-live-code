@@ -1,8 +1,8 @@
-import { Radio, RadioGroup } from "@servicetitan/anvil2";
+import { Radio } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <RadioGroup legend="Update auto-renew setting">
+    <Radio.Group legend="Update auto-renew setting">
       <Radio
         name="c3"
         id="ex-c3-1"
@@ -17,7 +17,7 @@ function App() {
         label="Disabled"
         description="Agreement will expire on its end date unless renewed manually"
       />
-    </RadioGroup>
+    </Radio.Group>
   );
 }
 

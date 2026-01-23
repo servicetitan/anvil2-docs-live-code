@@ -1,0 +1,47 @@
+import { Toolbar, type Filter } from "@servicetitan/anvil2/beta";
+import { useState, useEffect } from "react";
+
+function App() {
+  const [filters, setFilters] = useState<Filter[]>([
+    {
+      id: "categoryFilter",
+      type: "dateRange",
+      label: "Label",
+      mode: "mm/dd/yyyy",
+      value: {
+        startDate: "2026-01-01",
+        endDate: "2026-01-14",
+      },
+    },
+    {
+      id: "statusFilter",
+      type: "dateRange",
+      label: "Label",
+      mode: "mm/dd/yyyy",
+    },
+  ]);
+
+  useEffect(() => {
+    // Small delay to ensure the button is rendered
+    const timer = setTimeout(() => {
+      const button = document.querySelector(
+        `button[data-id="categoryFilter"]`,
+      ) as HTMLButtonElement;
+      if (button) {
+        button.click();
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div style={{ width: "800px" }}>
+      <Toolbar associatedContent="name">
+        <Toolbar.Filters filters={filters} onFilterChange={setFilters} />
+      </Toolbar>
+    </div>
+  );
+}
+
+export default App;

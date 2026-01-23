@@ -2,16 +2,10 @@ import { Announcement, Flex } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex direction="column" gap={4}>
-      <Announcement status="info" title="We did this thing, check it out!" />
-      <Announcement
-        status="warning"
-        title="You might want to think twice before doing that..."
-      />
-      <Announcement
-        status="danger"
-        title="Oh boy, things are really messed up now."
-      />
+    <Flex direction="column" gap={4} grow={1}>
+      <Announcement status="info" title="Info announcement" />
+      <Announcement status="warning" title="Warning announcement" />
+      <Announcement status="danger" title="Danger announcement" />
     </Flex>
   );
 }

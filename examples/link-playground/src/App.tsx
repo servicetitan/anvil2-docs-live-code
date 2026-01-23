@@ -6,7 +6,7 @@ function App() {
       href="https://anvil.servicetitan.com/"
       target="_blank"
       appearance="primary"
-      quiet
+      ghost
     >
       Link Example
     </Link>

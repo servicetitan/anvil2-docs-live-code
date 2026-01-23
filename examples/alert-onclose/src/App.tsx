@@ -5,7 +5,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <Flex direction="column" gap="4">
+    <Flex direction="column" gap="4" flex="1">
       {isOpen ? (
         <Alert title="Closeable Alert" onClose={() => setIsOpen(false)} />
       ) : (

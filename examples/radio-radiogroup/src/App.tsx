@@ -1,11 +1,11 @@
-import { Radio, RadioGroup } from "@servicetitan/anvil2";
+import { Radio } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <RadioGroup legend="Choose a taco" required>
+    <Radio.Group legend="Choose a taco" required>
       <Radio name="taco" value="asada" label="Carne Asada" />
       <Radio name="taco" value="pollo" label="Pollo" />
-    </RadioGroup>
+    </Radio.Group>
   );
 }
 

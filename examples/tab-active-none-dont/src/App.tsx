@@ -2,7 +2,7 @@ import { Tab } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Tab.List>
+    <Tab.List style={{ minWidth: "55rem" }}>
       <Tab.Button id="t1" controls="p1" onClick={console.log}>
         Tab A
       </Tab.Button>

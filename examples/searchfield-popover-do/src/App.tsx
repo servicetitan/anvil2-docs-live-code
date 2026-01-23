@@ -99,13 +99,7 @@ function App() {
 
   return (
     <div style={{ width: "500px", height: "672px" }}>
-      <Popover
-        open
-        placement="bottom-start"
-        disableShift
-        disableFlip
-        disableFocusLock
-      >
+      <Popover open placement="bottom-start" disableShift disableFlip modal>
         <Popover.Button>Trigger</Popover.Button>
         <Popover.Content>
           <Flex gap="3" direction="column">
@@ -142,7 +136,7 @@ function App() {
                 const idExistsInResult = result.some(
                   (resultItem) => resultItem.id === item.id,
                 );
-                return idExistsInResult && <Link quiet>{item.label}</Link>;
+                return idExistsInResult && <Link ghost>{item.label}</Link>;
               })}
 
             {(getAllFilter() || isDocumentationChecked) &&
@@ -157,7 +151,7 @@ function App() {
                 const idExistsInResult = result.some(
                   (resultItem) => resultItem.id === item.id,
                 );
-                return idExistsInResult && <Link quiet>{item.label}</Link>;
+                return idExistsInResult && <Link ghost>{item.label}</Link>;
               })}
 
             {(getAllFilter() || isPeopleChecked) && hasPeopleId.length > 0 && (

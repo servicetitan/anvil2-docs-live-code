@@ -1,12 +1,12 @@
-import { Checkbox, CheckboxGroup } from "@servicetitan/anvil2";
+import { Checkbox } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <CheckboxGroup legend="Group label">
+    <Checkbox.Group legend="Group label">
       <Checkbox label="Unselected" error />
       <Checkbox label="Selected" error defaultChecked />
       <Checkbox label="Indeterminate" error indeterminate />
-    </CheckboxGroup>
+    </Checkbox.Group>
   );
 }
 

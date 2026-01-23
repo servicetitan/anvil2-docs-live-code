@@ -1,8 +1,4 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  type CheckboxState,
-} from "@servicetitan/anvil2";
+import { Checkbox, type CheckboxState } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 function App() {
@@ -24,7 +20,7 @@ function App() {
   };
 
   return (
-    <CheckboxGroup legend="Preferred method(s) of communcation" required>
+    <Checkbox.Group legend="Preferred method(s) of communcation" required>
       {list.map((item, i) => {
         return (
           <Checkbox
@@ -35,7 +31,7 @@ function App() {
           />
         );
       })}
-    </CheckboxGroup>
+    </Checkbox.Group>
   );
 }
 
