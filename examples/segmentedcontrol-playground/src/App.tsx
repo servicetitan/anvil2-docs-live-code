@@ -1,4 +1,4 @@
-import { SegmentedControl, Flex, Divider, Text } from "@servicetitan/anvil2";
+import { SegmentedControl, Flex } from "@servicetitan/anvil2";
 import MenuIcon from "@servicetitan/anvil2/assets/icons/material/round/menu.svg";
 import { useState } from "react";
 
@@ -21,10 +21,6 @@ function App() {
           Level 4
         </SegmentedControl.Segment>
       </SegmentedControl>
-
-      <Divider />
-
-      <Text>The selected value is: {JSON.stringify(selected, null, 2)}</Text>
     </Flex>
   );
 }

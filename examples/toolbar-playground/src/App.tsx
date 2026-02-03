@@ -20,48 +20,35 @@ function App() {
   ];
 
   return (
-    <div style={{ minHeight: "284px" }}>
-      <div
-        style={{
-          resize: "horizontal",
-          overflow: "hidden",
-          border: "1px dashed #ccc",
-          padding: "10px",
-          height: "100%",
-          width: "75%",
-        }}
+    <div>
+      <Toolbar
+        associatedContent="playground toolbar"
+        additionalItems={additionalItems}
+        overflow="collapse"
       >
-        <Toolbar
-          associatedContent="playground toolbar"
-          additionalItems={additionalItems}
-          overflow="collapse"
+        <Toolbar.Button
+          icon={Edit}
+          onClick={console.log}
+          aria-label="Edit option"
+        />
+
+        <Toolbar.ButtonToggle onClick={console.log}>Bold</Toolbar.ButtonToggle>
+
+        <Toolbar.ButtonLink
+          href="https://anvil.servicetitan.com/"
+          target="_blank"
+          icon={{ before: Warning }}
+          appearance="primary"
         >
-          <Toolbar.Button
-            icon={Edit}
-            onClick={console.log}
-            aria-label="Edit option"
-          />
+          View Report
+        </Toolbar.ButtonLink>
 
-          <Toolbar.ButtonToggle onClick={console.log}>
-            Bold
-          </Toolbar.ButtonToggle>
-
-          <Toolbar.ButtonLink
-            href="https://anvil.servicetitan.com/"
-            target="_blank"
-            icon={{ before: Warning }}
-            appearance="primary"
-          >
-            View Report
-          </Toolbar.ButtonLink>
-
-          <Toolbar.Select
-            accessibleLabel="Status"
-            items={selectItems}
-            onChange={console.log}
-          />
-        </Toolbar>
-      </div>
+        <Toolbar.Select
+          accessibleLabel="Status"
+          items={selectItems}
+          onChange={console.log}
+        />
+      </Toolbar>
     </div>
   );
 }

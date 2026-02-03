@@ -147,7 +147,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ width: "800px" }}>
+    <Flex style={{ width: "800px", height: "290px" }} alignItems="flex-start">
       <Toolbar associatedContent="name">
         <Toolbar.Filters
           filters={filters}
@@ -156,7 +156,7 @@ function App() {
           }}
         />
       </Toolbar>
-    </div>
+    </Flex>
   );
 }
 

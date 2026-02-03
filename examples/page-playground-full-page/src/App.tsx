@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div style={{ width: "100vw" }}>
-      <Page style={{ height: "15rem", overflow: "hidden" }}>
-        <Page.Sidebar style={{ height: "15rem" }}>
+      <Page>
+        <Page.Sidebar>
           <Page.SidebarHeader>
             <Text variant="headline" el="h2">
               Sidebar Title

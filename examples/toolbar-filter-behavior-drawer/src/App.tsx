@@ -214,11 +214,11 @@ function App() {
   }, []);
 
   return (
-    <div style={{ width: "800px" }}>
+    <Flex style={{ width: "800px", height: "775px" }}>
       <Toolbar associatedContent="name">
         <Toolbar.Filters filters={filters} onFilterChange={setFilters} />
       </Toolbar>
-    </div>
+    </Flex>
   );
 }
 
