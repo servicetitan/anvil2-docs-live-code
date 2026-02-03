@@ -48,10 +48,7 @@ function App() {
   }, []);
 
   return (
-    <Flex
-      style={{ width: "800px", height: "200px", background: "red" }}
-      alignItems="flex-start"
-    >
+    <Flex style={{ width: "800px", height: "200px" }} alignItems="flex-start">
       <Toolbar associatedContent="name">
         <Toolbar.Filters filters={filters} onFilterChange={setFilters} />
       </Toolbar>
