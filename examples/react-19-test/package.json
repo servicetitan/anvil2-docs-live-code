@@ -1,5 +1,5 @@
 {
-  "name": "avatar-playground-full-page",
+  "name": "react-19-test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@servicetitan/anvil2": "latest",
+    "@servicetitan/anvil2-ext-atlas": "latest",
     "react": "^18",
     "react-dom": "^18"
   },
