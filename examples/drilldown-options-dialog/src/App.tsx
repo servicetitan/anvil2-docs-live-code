@@ -21,7 +21,7 @@ function App() {
     // Note: The div wrapper below is only for documentation purposes to ensure
     // proper sizing in the docs. In real usage, omit this wrapper and render
     // the Dialog directly.
-    <div style={{ minWidth: "22.5rem", minHeight: "13.375rem" }}>
+    <div style={{ minWidth: "360px", minHeight: "316px" }}>
       <Dialog {...drillDownProps} open size="medium" defaultDrillDownIndex={1}>
         <Dialog.Header>Dialog Header</Dialog.Header>
         <Dialog.Content>
