@@ -13,8 +13,12 @@ function App() {
       <FieldMessage
         hint="Hint text"
         description="Description text, can be max 3 lines explaining what the purpose of the field is to the user"
-        errorMessage="Field message in error state"
+        error="Field message in error state"
       />
+
+      <Divider />
+
+      <FieldMessage hint="Hint text" warning="Field message in warning state" />
 
       <Divider />
 

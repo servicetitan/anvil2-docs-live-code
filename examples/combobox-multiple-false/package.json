@@ -11,6 +11,8 @@
   "dependencies": {
     "@servicetitan/anvil2": "latest",
     "@servicetitan/anvil2-ext-atlas": "latest",
+    "@servicetitan/anvil2-ext-charts": "latest",
+    "@amcharts/amcharts5": "^5",
     "react": "^18",
     "react-dom": "^18"
   },
