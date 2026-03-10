@@ -7,9 +7,16 @@ export default defineConfig({
   plugins: [
     react(),
     svgr({
-      include: "**/*.svg",
+      include: ["**/hammer-icon/**/*.svg", "**/anvil2/assets/icons/**/*.svg"],
       svgrOptions: {
         icon: true,
+      },
+    }),
+    svgr({
+      include: "**/*.svg",
+      exclude: ["**/hammer-icon/**/*.svg", "**/anvil2/assets/icons/**/*.svg"],
+      svgrOptions: {
+        icon: false,
       },
     }),
   ],

@@ -1,4 +1,7 @@
+import { Text, Flex, Link } from "@servicetitan/anvil2";
 import { DataTable, createColumnHelper } from "@servicetitan/anvil2/beta";
+import NoSearchResultsLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-light.svg";
+import NoSearchResultsDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-dark.svg";
 
 type Invoice = {
   invoiceNumber: string;
@@ -30,25 +33,26 @@ const columns = [
 
 function App() {
   return (
-    // Currently, we don't have a way to add empty state to the DataTable component
-    <DataTable data={[]} columns={columns} />
-    // TODO: Add empty state to the DataTable component
-    // <Flex
-    //   alignItems="center"
-    //   direction="column"
-    //   gap={2}
-    //   style={{ maxWidth: "420px" }}
-    // >
-    //   <Icon
-    //     svg={NotInterested}
-    //     size="xlarge"
-    //     color={core.semantic.ForegroundColorDanger.value}
-    //   />
-    //   <Text subdued size="small" style={{ textAlign: "center" }}>
-    //     No results found. Try another search or{" "}
-    //     <Link href="#">create a new report</Link>.
-    //   </Text>
-    // </Flex>
+    <DataTable
+      data={[]}
+      columns={columns}
+      emptyState={{
+        svg: { light: NoSearchResultsLight, dark: NoSearchResultsDark },
+        content: (
+          <Flex
+            alignItems="center"
+            direction="column"
+            gap={2}
+            style={{ maxWidth: "420px" }}
+          >
+            <Text subdued size="small" style={{ textAlign: "center" }}>
+              No results found. Try another search or{" "}
+              <Link href="#">create a new report</Link>.
+            </Text>
+          </Flex>
+        ),
+      }}
+    />
   );
 }
 
