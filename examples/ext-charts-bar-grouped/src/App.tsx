@@ -87,7 +87,7 @@ function App() {
     return () => root.dispose();
   }, []);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "500px" }} />;
+  return <div id="chartdiv" style={{ minWidth: "55rem", height: "500px" }} />;
 }
 
 export default App;
