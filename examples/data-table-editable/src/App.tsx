@@ -87,76 +87,70 @@ function App() {
       sortable: true,
       resizable: true,
       minWidth: 130,
-      editMode: "text",
-      onChange: (value, rowId) => {
-        setData((prev) =>
-          prev.map((row) =>
-            row.id === rowId ? { ...row, id: value as string } : row,
-          ),
-        );
+      editConfig: {
+        mode: "text",
+        onChange: (value, rowId) => {
+          setData((prev) =>
+            prev.map((row) =>
+              row.id === rowId ? { ...row, id: value as string } : row,
+            ),
+          );
+        },
       },
     }),
     createColumn("customer_name", {
       headerLabel: "Customer",
       sortable: true,
       resizable: true,
-      editMode: "text",
-      onChange: (value, rowId) => {
-        setData((prev) =>
-          prev.map((row) =>
-            row.id === rowId ? { ...row, customer_name: value as string } : row,
-          ),
-        );
+      editConfig: {
+        mode: "text",
+        onChange: (value, rowId) => {
+          setData((prev) =>
+            prev.map((row) =>
+              row.id === rowId
+                ? { ...row, customer_name: value as string }
+                : row,
+            ),
+          );
+        },
       },
     }),
     createColumn("categories", {
       headerLabel: "Categories",
-      editMode: "multiselect",
       minWidth: 180,
       resizable: true,
-      options: [
-        { value: "electronics" as Category, label: "Electronics" },
-        { value: "clothing" as Category, label: "Clothing" },
-        { value: "home" as Category, label: "Home" },
-        { value: "garden" as Category, label: "Garden" },
-        { value: "other" as Category, label: "Other" },
-      ],
-      renderCell: (value) =>
+      renderCell: (value: Category[]) =>
         chipsFormatter(
-          value?.map((val) => ({
+          value?.map((val: Category) => ({
             label: val.charAt(0).toUpperCase() + val.slice(1),
           })),
           { truncateChips: true },
         ),
-      onChange: (value, rowId) => {
-        setData((prev) =>
-          prev.map((row) =>
-            row.id === rowId ? { ...row, categories: value } : row,
-          ),
-        );
+      editConfig: {
+        mode: "multiselect",
+        options: [
+          { id: "electronics", label: "Electronics" },
+          { id: "clothing", label: "Clothing" },
+          { id: "home", label: "Home" },
+          { id: "garden", label: "Garden" },
+          { id: "other", label: "Other" },
+        ],
+        onChange: (options, rowId) => {
+          const value = options.map((o) => String(o.id)) as Category[];
+          setData((prev) =>
+            prev.map((row) =>
+              row.id === rowId ? { ...row, categories: value } : row,
+            ),
+          );
+        },
       },
     }),
     createColumn("status", {
       headerLabel: "Status",
       resizable: true,
-      editMode: "multiselect",
-      options: [
-        { value: "pending" as Status, label: "Pending" },
-        { value: "shipped" as Status, label: "Shipped" },
-        { value: "processing" as Status, label: "Processing" },
-        { value: "completed" as Status, label: "Completed" },
-        { value: "cancelled" as Status, label: "Cancelled" },
-      ],
-      onChange: (value, rowId) => {
-        setData((prev) =>
-          prev.map((row) =>
-            row.id === rowId ? { ...row, status: value } : row,
-          ),
-        );
-      },
-      renderCell: (value) =>
+      renderCell: (value: Status[] | undefined) =>
         chipsFormatter(
-          value?.map((val) => ({
+          value?.map((val: Status) => ({
             label: val.charAt(0).toUpperCase() + val.slice(1),
             color:
               val === "pending"
@@ -170,7 +164,10 @@ function App() {
                       : "#ef4444",
           })),
         ),
-      sortable: (valueA, valueB) => {
+      sortable: (
+        valueA: Status[] | undefined,
+        valueB: Status[] | undefined,
+      ) => {
         const statusOrder = {
           pending: 1,
           processing: 2,
@@ -187,25 +184,28 @@ function App() {
 
         return statusA - statusB;
       },
+      editConfig: {
+        mode: "multiselect",
+        options: [
+          { id: "pending", label: "Pending" },
+          { id: "shipped", label: "Shipped" },
+          { id: "processing", label: "Processing" },
+          { id: "completed", label: "Completed" },
+          { id: "cancelled", label: "Cancelled" },
+        ],
+        onChange: (options, rowId) => {
+          const value = options.map((o) => String(o.id)) as Status[];
+          setData((prev) =>
+            prev.map((row) =>
+              row.id === rowId ? { ...row, status: value } : row,
+            ),
+          );
+        },
+      },
     }),
     createColumn("payment_type", {
       headerLabel: "Payment Type",
-      editMode: "select",
-      options: [
-        { value: "credit_card" as PaymentType, label: "Credit Card" },
-        { value: "cash" as PaymentType, label: "Cash" },
-        { value: "bank_transfer" as PaymentType, label: "Bank Transfer" },
-        { value: "check" as PaymentType, label: "Check" },
-        { value: "paypal" as PaymentType, label: "PayPal" },
-      ],
-      onChange: (value, rowId) => {
-        setData((prev) =>
-          prev.map((row) =>
-            row.id === rowId ? { ...row, payment_type: value } : row,
-          ),
-        );
-      },
-      renderCell: (value) => (
+      renderCell: (value: PaymentType) => (
         <span>
           {value === "credit_card"
             ? "Credit Card"
@@ -222,6 +222,27 @@ function App() {
       ),
       sortable: true,
       minWidth: 180,
+      editConfig: {
+        mode: "select",
+        options: [
+          { id: "credit_card", label: "Credit Card" },
+          { id: "cash", label: "Cash" },
+          { id: "bank_transfer", label: "Bank Transfer" },
+          { id: "check", label: "Check" },
+          { id: "paypal", label: "PayPal" },
+        ],
+        onChange: (option, rowId) => {
+          if (option) {
+            setData((prev) =>
+              prev.map((row) =>
+                row.id === rowId
+                  ? { ...row, payment_type: String(option.id) as PaymentType }
+                  : row,
+              ),
+            );
+          }
+        },
+      },
     }),
   ];
 
