@@ -102,6 +102,9 @@ function App() {
             <Text>Lorem ipsum dolor sit amet.</Text>
           </Flex>
         </Page.Panel>
+        <Page.Footer>
+          <Text>Page Footer</Text>
+        </Page.Footer>
       </Page>
     </div>
   );
