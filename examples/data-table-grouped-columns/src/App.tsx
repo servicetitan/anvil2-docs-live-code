@@ -79,7 +79,11 @@ const createColumn = createColumnHelper<OrderData>();
 // Define individual columns that will be grouped
 const orderInfoColumns = [
   createColumn("id", {
-    headerLabel: "Order ID",
+    header: {
+      label: "Order ID",
+      required: true,
+      moreInfo: "Unique order identifier used in downstream workflows.",
+    },
     sortable: true,
     resizable: true,
     minWidth: 130,
@@ -90,11 +94,11 @@ const orderInfoColumns = [
     ),
   }),
   createColumn("order_date", {
-    headerLabel: "Order Date",
+    header: { label: "Order Date" },
     sortable: true,
   }),
   createColumn("status", {
-    headerLabel: "Status",
+    header: { label: "Status" },
     resizable: true,
     renderCell: (value) =>
       chipsFormatter(
@@ -134,7 +138,7 @@ const orderInfoColumns = [
 
 const paymentColumns = [
   createColumn("amount", {
-    headerLabel: "Amount",
+    header: { label: "Amount" },
     renderCell: (value) => currencyFormatter(value),
     sortable: true,
     footerContent: [
@@ -150,7 +154,7 @@ const paymentColumns = [
     ],
   }),
   createColumn("payment_type", {
-    headerLabel: "Payment Type",
+    header: { label: "Payment Type" },
     renderCell: (value) => (
       <span>
         {value === "credit_card"
@@ -176,14 +180,18 @@ const groupedColumns = [
   createColumn(
     { group: "order_info" },
     {
-      headerLabel: "Order Info",
+      header: {
+        label: "Order Info",
+        required: true,
+        moreInfo: "Columns describing the order record.",
+      },
       columns: orderInfoColumns,
     },
   ),
   createColumn(
     { group: "payment_details" },
     {
-      headerLabel: "Payment Details",
+      header: { label: "Payment Details" },
       columns: paymentColumns,
     },
   ),

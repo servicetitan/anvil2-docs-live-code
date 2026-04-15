@@ -14,16 +14,16 @@ const createColumn = createColumnHelper<OrderData>();
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Order ID",
+    header: { label: "Order ID" },
   }),
   createColumn("customer", {
-    headerLabel: "Customer",
+    header: { label: "Customer" },
   }),
   createColumn("amount", {
-    headerLabel: "Amount",
+    header: { label: "Amount" },
   }),
   createColumn("status", {
-    headerLabel: "Status",
+    header: { label: "Status" },
   }),
 ];
 

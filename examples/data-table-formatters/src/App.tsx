@@ -63,36 +63,36 @@ const createColumn = createColumnHelper<ProductData>();
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Product ID",
+    header: { label: "Product ID" },
     minWidth: 100,
   }),
   createColumn("is_active", {
-    headerLabel: "Active",
+    header: { label: "Active" },
     renderCell: (value) => booleanFormatter(value),
     minWidth: 80,
   }),
   createColumn("quantity", {
-    headerLabel: "Quantity",
+    header: { label: "Quantity" },
     renderCell: (value) => numberFormatter(value),
     minWidth: 100,
   }),
   createColumn("amount_due", {
-    headerLabel: "Amount Due",
+    header: { label: "Amount Due" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 120,
   }),
   createColumn("paid_percent", {
-    headerLabel: "Paid %",
+    header: { label: "Paid %" },
     renderCell: (value) => percentFormatter(value),
     minWidth: 80,
   }),
   createColumn("order_date", {
-    headerLabel: "Order Date",
+    header: { label: "Order Date" },
     renderCell: (value: string) => dateFormatter(value),
     minWidth: 130,
   }),
   createColumn("start_time", {
-    headerLabel: "Start Time",
+    header: { label: "Start Time" },
     renderCell: (value: string) => timeFormatter(value),
     minWidth: 110,
   }),

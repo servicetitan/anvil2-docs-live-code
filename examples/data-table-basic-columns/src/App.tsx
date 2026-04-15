@@ -62,35 +62,39 @@ const createColumn = createColumnHelper<CustomerRow>();
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Customer ID",
+    header: {
+      label: "Customer ID",
+      required: true,
+      moreInfo: "Used by support and billing to identify the account.",
+    },
     sortable: true,
     resizable: true,
     minWidth: 100,
     maxWidth: 400,
   }),
   createColumn("customer_name", {
-    headerLabel: "Name",
+    header: { label: "Name" },
     sortable: true,
     resizable: true,
     minWidth: 150,
   }),
   createColumn("address", {
-    headerLabel: "Address",
+    header: { label: "Address" },
     resizable: true,
     minWidth: 200,
   }),
   createColumn("status", {
-    headerLabel: "Status",
+    header: { label: "Status" },
     resizable: true,
   }),
   createColumn("amount_due", {
-    headerLabel: "Amount Due",
+    header: { label: "Amount Due" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 100,
     maxWidth: 100,
   }),
   createColumn("paid_percent", {
-    headerLabel: "Paid %",
+    header: { label: "Paid %" },
     renderCell: (value) => percentFormatter(value),
     minWidth: 100,
     maxWidth: 100,

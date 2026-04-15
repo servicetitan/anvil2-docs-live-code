@@ -53,29 +53,29 @@ const createColumn = createColumnHelper<InvoiceData>();
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Invoice ID",
+    header: { label: "Invoice ID" },
     minWidth: 100,
   }),
   createColumn("customer_name", {
-    headerLabel: "Customer",
+    header: { label: "Customer" },
     minWidth: 150,
   }),
   createColumn("service", {
-    headerLabel: "Service",
+    header: { label: "Service" },
     minWidth: 150,
   }),
   createColumn("amount", {
-    headerLabel: "Amount",
+    header: { label: "Amount" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 100,
   }),
   createColumn("tax", {
-    headerLabel: "Tax",
+    header: { label: "Tax" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 80,
   }),
   createColumn("total", {
-    headerLabel: "Total",
+    header: { label: "Total" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 100,
   }),

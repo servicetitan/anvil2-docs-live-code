@@ -80,7 +80,7 @@ const createColumn = createColumnHelper<OrderData>();
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Order ID",
+    header: { label: "Order ID" },
     sortable: true,
     resizable: true,
     minWidth: 130,
@@ -91,7 +91,7 @@ const columns = [
     ),
   }),
   createColumn("amount", {
-    headerLabel: "Amount",
+    header: { label: "Amount" },
     renderCell: (value) => currencyFormatter(value),
     sortable: true,
     footerContent: [
@@ -107,7 +107,7 @@ const columns = [
     ],
   }),
   createColumn("status", {
-    headerLabel: "Status",
+    header: { label: "Status" },
     resizable: true,
     renderCell: (value) =>
       chipsFormatter(
@@ -144,11 +144,11 @@ const columns = [
     },
   }),
   createColumn("order_date", {
-    headerLabel: "Order Date",
+    header: { label: "Order Date" },
     sortable: true,
   }),
   createColumn("payment_type", {
-    headerLabel: "Payment Type",
+    header: { label: "Payment Type" },
     renderCell: (value) => (
       <span>
         {value === "credit_card"

@@ -83,7 +83,7 @@ function App() {
 
   const columns = [
     createColumn("id", {
-      headerLabel: "Order ID",
+      header: { label: "Order ID" },
       sortable: true,
       resizable: true,
       minWidth: 130,
@@ -99,7 +99,7 @@ function App() {
       },
     }),
     createColumn("customer_name", {
-      headerLabel: "Customer",
+      header: { label: "Customer" },
       sortable: true,
       resizable: true,
       editConfig: {
@@ -116,7 +116,7 @@ function App() {
       },
     }),
     createColumn("categories", {
-      headerLabel: "Categories",
+      header: { label: "Categories" },
       minWidth: 180,
       resizable: true,
       renderCell: (value: Category[]) =>
@@ -146,7 +146,7 @@ function App() {
       },
     }),
     createColumn("status", {
-      headerLabel: "Status",
+      header: { label: "Status" },
       resizable: true,
       renderCell: (value: Status[] | undefined) =>
         chipsFormatter(
@@ -204,7 +204,7 @@ function App() {
       },
     }),
     createColumn("payment_type", {
-      headerLabel: "Payment Type",
+      header: { label: "Payment Type" },
       renderCell: (value: PaymentType) => (
         <span>
           {value === "credit_card"

@@ -57,20 +57,20 @@ const data: TableRow<OrderData>[] = [
 
 const columns = [
   createColumn("id", {
-    headerLabel: "Order ID",
+    header: { label: "Order ID" },
     minWidth: 120,
   }),
   createColumn("customer_name", {
-    headerLabel: "Customer Name",
+    header: { label: "Customer Name" },
     minWidth: 180,
   }),
   createColumn("amount", {
-    headerLabel: "Amount",
+    header: { label: "Amount" },
     renderCell: (value) => currencyFormatter(value),
     minWidth: 100,
   }),
   createColumn("status", {
-    headerLabel: "Status",
+    header: { label: "Status" },
     minWidth: 100,
   }),
 ];
