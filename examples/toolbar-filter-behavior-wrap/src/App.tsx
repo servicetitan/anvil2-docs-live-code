@@ -1,5 +1,5 @@
 import {
-  Toolbar,
+  FilterBar,
   type Filter,
   type CustomFilter,
 } from "@servicetitan/anvil2/beta";
@@ -201,9 +201,11 @@ function App() {
 
   return (
     <div style={{ width: "800px" }}>
-      <Toolbar associatedContent="name">
-        <Toolbar.Filters filters={filters} onFilterChange={setFilters} />
-      </Toolbar>
+      <FilterBar
+        associatedContent="example"
+        filters={filters}
+        onFilterChange={setFilters}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Flex } from "@servicetitan/anvil2";
-import { Toolbar, type Filter } from "@servicetitan/anvil2/beta";
+import { FilterBar, type Filter } from "@servicetitan/anvil2/beta";
 import { useState, useEffect } from "react";
 
 type SelectItem = { id: string; label: string };
@@ -66,9 +66,11 @@ function App() {
 
   return (
     <Flex style={{ width: "800px", height: "320px" }} alignItems="flex-start">
-      <Toolbar associatedContent="name">
-        <Toolbar.Filters filters={filters} onFilterChange={setFilters} />
-      </Toolbar>
+      <FilterBar
+        associatedContent="example"
+        filters={filters}
+        onFilterChange={setFilters}
+      />
     </Flex>
   );
 }

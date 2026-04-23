@@ -1,5 +1,5 @@
 import {
-  Toolbar,
+  FilterBar,
   type Filter,
   type CustomFilter,
 } from "@servicetitan/anvil2/beta";
@@ -148,14 +148,13 @@ function App() {
 
   return (
     <Flex style={{ width: "800px", height: "290px" }} alignItems="flex-start">
-      <Toolbar associatedContent="name">
-        <Toolbar.Filters
-          filters={filters}
-          onFilterChange={(updatedFilters) => {
-            setFilters(updatedFilters);
-          }}
-        />
-      </Toolbar>
+      <FilterBar
+        associatedContent="example"
+        filters={filters}
+        onFilterChange={(updatedFilters) => {
+          setFilters(updatedFilters);
+        }}
+      />
     </Flex>
   );
 }
