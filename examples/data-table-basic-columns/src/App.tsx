@@ -89,13 +89,13 @@ const columns = [
   }),
   createColumn("amount_due", {
     header: { label: "Amount Due" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: CustomerRow["amount_due"]) => currencyFormatter(value),
     minWidth: 100,
     maxWidth: 100,
   }),
   createColumn("paid_percent", {
     header: { label: "Paid %" },
-    renderCell: (value) => percentFormatter(value),
+    renderCell: (value: CustomerRow["paid_percent"]) => percentFormatter(value),
     minWidth: 100,
     maxWidth: 100,
   }),

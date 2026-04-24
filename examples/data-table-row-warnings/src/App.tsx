@@ -68,7 +68,7 @@ const columns = [
   }),
   createColumn("amount", {
     header: { label: "Amount" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: OrderData["amount"]) => currencyFormatter(value),
     minWidth: 100,
   }),
   createColumn("status", {

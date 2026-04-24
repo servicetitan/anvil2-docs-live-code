@@ -66,17 +66,17 @@ const columns = [
   }),
   createColumn("amount", {
     header: { label: "Amount" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: InvoiceData["amount"]) => currencyFormatter(value),
     minWidth: 100,
   }),
   createColumn("tax", {
     header: { label: "Tax" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: InvoiceData["tax"]) => currencyFormatter(value),
     minWidth: 80,
   }),
   createColumn("total", {
     header: { label: "Total" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: InvoiceData["total"]) => currencyFormatter(value),
     minWidth: 100,
   }),
 ];

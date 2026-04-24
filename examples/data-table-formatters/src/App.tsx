@@ -68,22 +68,22 @@ const columns = [
   }),
   createColumn("is_active", {
     header: { label: "Active" },
-    renderCell: (value) => booleanFormatter(value),
+    renderCell: (value: ProductData["is_active"]) => booleanFormatter(value),
     minWidth: 80,
   }),
   createColumn("quantity", {
     header: { label: "Quantity" },
-    renderCell: (value) => numberFormatter(value),
+    renderCell: (value: ProductData["quantity"]) => numberFormatter(value),
     minWidth: 100,
   }),
   createColumn("amount_due", {
     header: { label: "Amount Due" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: ProductData["amount_due"]) => currencyFormatter(value),
     minWidth: 120,
   }),
   createColumn("paid_percent", {
     header: { label: "Paid %" },
-    renderCell: (value) => percentFormatter(value),
+    renderCell: (value: ProductData["paid_percent"]) => percentFormatter(value),
     minWidth: 80,
   }),
   createColumn("order_date", {

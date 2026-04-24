@@ -14,6 +14,8 @@ type PaymentType =
   | "check"
   | "paypal";
 
+type StatusValue = OrderData["status"];
+
 type OrderData = {
   id: string;
   amount: number;
@@ -76,6 +78,54 @@ const data: TableRow<OrderData>[] = [
 
 const createColumn = createColumnHelper<OrderData>();
 
+const statusOrder: Record<Status, number> = {
+  pending: 1,
+  processing: 2,
+  shipped: 3,
+  completed: 4,
+  cancelled: 5,
+};
+
+const formatStatus = (value: StatusValue) =>
+  chipsFormatter(
+    value?.map((status) => ({
+      label: status.charAt(0).toUpperCase() + status.slice(1),
+      color:
+        status === "pending"
+          ? "#f59e0b"
+          : status === "shipped"
+            ? "#8b5cf6"
+            : status === "processing"
+              ? "#3b82f6"
+              : status === "completed"
+                ? "#10b981"
+                : "#ef4444",
+    })),
+  );
+
+const sortStatus = (valueA: StatusValue, valueB: StatusValue) => {
+  const statusA = valueA && valueA.length > 0 ? statusOrder[valueA[0]] : 999;
+  const statusB = valueB && valueB.length > 0 ? statusOrder[valueB[0]] : 999;
+
+  return statusA - statusB;
+};
+
+const formatPaymentType = (value: PaymentType) => (
+  <span>
+    {value === "credit_card"
+      ? "Credit Card"
+      : value === "cash"
+        ? "Cash"
+        : value === "bank_transfer"
+          ? "Bank Transfer"
+          : value === "check"
+            ? "Check"
+            : value === "paypal"
+              ? "PayPal"
+              : value}
+  </span>
+);
+
 const columns = [
   createColumn("id", {
     header: { label: "Order ID" },
@@ -90,7 +140,7 @@ const columns = [
   }),
   createColumn("amount", {
     header: { label: "Amount" },
-    renderCell: (value) => currencyFormatter(value),
+    renderCell: (value: OrderData["amount"]) => currencyFormatter(value),
     sortable: true,
     footerContent: [
       <span key="total">
@@ -107,39 +157,8 @@ const columns = [
   createColumn("status", {
     header: { label: "Status" },
     resizable: true,
-    renderCell: (value) =>
-      chipsFormatter(
-        value?.map((val) => ({
-          label: val.charAt(0).toUpperCase() + val.slice(1),
-          color:
-            val === "pending"
-              ? "#f59e0b"
-              : val === "shipped"
-                ? "#8b5cf6"
-                : val === "processing"
-                  ? "#3b82f6"
-                  : val === "completed"
-                    ? "#10b981"
-                    : "#ef4444",
-        })),
-      ),
-    sortable: (valueA, valueB) => {
-      const statusOrder = {
-        pending: 1,
-        processing: 2,
-        shipped: 3,
-        completed: 4,
-        cancelled: 5,
-      } as const;
-
-      const statusA =
-        valueA && valueA.length > 0 ? statusOrder[valueA[0]] : 999;
-
-      const statusB =
-        valueB && valueB.length > 0 ? statusOrder[valueB[0]] : 999;
-
-      return statusA - statusB;
-    },
+    renderCell: (value: StatusValue) => formatStatus(value),
+    sortable: sortStatus,
   }),
   createColumn("order_date", {
     header: { label: "Order Date" },
@@ -147,21 +166,7 @@ const columns = [
   }),
   createColumn("payment_type", {
     header: { label: "Payment Type" },
-    renderCell: (value) => (
-      <span>
-        {value === "credit_card"
-          ? "Credit Card"
-          : value === "cash"
-            ? "Cash"
-            : value === "bank_transfer"
-              ? "Bank Transfer"
-              : value === "check"
-                ? "Check"
-                : value === "paypal"
-                  ? "PayPal"
-                  : value}
-      </span>
-    ),
+    renderCell: (value: PaymentType) => formatPaymentType(value),
     sortable: true,
     minWidth: 150,
   }),
