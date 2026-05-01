@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Avatar } from "@servicetitan/anvil2";
+import { Avatar, Flex, Text } from "@servicetitan/anvil2";
 import { RichTextEditor } from "@servicetitan/anvil2/beta";
 
 const ALL_USERS = [
@@ -33,24 +33,15 @@ function App() {
       renderMentionHoverContent={(option) => {
         const user = ALL_USERS.find((u) => u.id === option.id);
         return (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              padding: "8px 4px",
-            }}
-          >
+          <Flex alignItems="center" gap={3} style={{ padding: "8px 4px" }}>
             <Avatar name={option.label} size="medium" />
-            <div>
-              <div style={{ fontWeight: 600, lineHeight: 1.4 }}>
-                {option.label}
-              </div>
-              <div style={{ fontSize: 12, opacity: 0.65, lineHeight: 1.4 }}>
+            <Flex direction="column">
+              <Text style={{ fontWeight: 600 }}>{option.label}</Text>
+              <Text size="small" subdued>
                 {user?.role}
-              </div>
-            </div>
-          </div>
+              </Text>
+            </Flex>
+          </Flex>
         );
       }}
     />

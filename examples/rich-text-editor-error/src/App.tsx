@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button, Flex } from "@servicetitan/anvil2";
 import { RichTextEditor } from "@servicetitan/anvil2/beta";
 
 function App() {
@@ -10,23 +11,26 @@ function App() {
 
   return (
     <form
-      style={{ display: "flex", flexDirection: "column", gap: 16 }}
       onSubmit={(e) => {
         e.preventDefault();
         setSubmitted(true);
       }}
     >
-      <RichTextEditor
-        label="Description"
-        required
-        placeholder="Start writing..."
-        value={html}
-        onChange={setHtml}
-        error={showError ? "Description is required." : undefined}
-      />
-      <div>
-        <button type="submit">Submit</button>
-      </div>
+      <Flex direction="column" gap={4}>
+        <RichTextEditor
+          label="Description"
+          required
+          placeholder="Start writing..."
+          value={html}
+          onChange={setHtml}
+          error={showError ? "Description is required." : undefined}
+        />
+        <Flex>
+          <Button type="submit" appearance="primary">
+            Submit
+          </Button>
+        </Flex>
+      </Flex>
     </form>
   );
 }

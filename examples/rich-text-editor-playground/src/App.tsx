@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Details, Flex } from "@servicetitan/anvil2";
 import { RichTextEditor } from "@servicetitan/anvil2/beta";
 
 const MENTION_OPTIONS = [
@@ -12,7 +13,7 @@ function App() {
   const [html, setHtml] = useState("");
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+    <Flex direction="column" gap={4}>
       <RichTextEditor
         label="Description"
         placeholder="Start writing..."
@@ -34,26 +35,25 @@ function App() {
         }
       />
       {html && (
-        <details>
-          <summary style={{ cursor: "pointer", fontSize: 12, color: "#666" }}>
-            HTML output
-          </summary>
-          <pre
-            style={{
-              fontSize: 11,
-              background: "#f5f5f5",
-              padding: 8,
-              borderRadius: 4,
-              overflowX: "auto",
-              whiteSpace: "pre-wrap",
-              wordBreak: "break-all",
-            }}
-          >
-            {html}
-          </pre>
-        </details>
+        <Details>
+          <Details.Summary>HTML output</Details.Summary>
+          <Details.Content>
+            <pre
+              style={{
+                fontSize: 11,
+                padding: 8,
+                borderRadius: 4,
+                overflowX: "auto",
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-all",
+              }}
+            >
+              {html}
+            </pre>
+          </Details.Content>
+        </Details>
       )}
-    </div>
+    </Flex>
   );
 }
 
