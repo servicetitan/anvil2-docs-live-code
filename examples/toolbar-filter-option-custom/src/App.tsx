@@ -147,13 +147,17 @@ function App() {
   }, []);
 
   return (
-    <Flex style={{ width: "800px", height: "290px" }} alignItems="flex-start">
+    <Flex
+      style={{ minWidth: "800px", height: "290px" }}
+      alignItems="flex-start"
+    >
       <FilterBar
         associatedContent="example"
         filters={filters}
         onFilterChange={(updatedFilters) => {
           setFilters(updatedFilters);
         }}
+        flexGrow={1}
       />
     </Flex>
   );

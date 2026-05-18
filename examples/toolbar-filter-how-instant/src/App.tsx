@@ -200,11 +200,12 @@ function App() {
   }, [filters]);
 
   return (
-    <div style={{ width: "800px" }}>
+    <div style={{ minWidth: "800px" }}>
       <FilterBar
         associatedContent="example"
         filters={filters}
         onFilterChange={setFilters}
+        flexGrow={1}
       />
     </div>
   );
