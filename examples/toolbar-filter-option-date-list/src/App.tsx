@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 function App() {
   const today = DateTime.local().startOf("day");
   const dateListOptions: DateListOption[] = [
-    { id: "anyDay", label: "Any day", value: null },
     { id: "today", label: "Today", value: today.toISODate() },
     {
       id: "yesterday",
