@@ -22,14 +22,14 @@ function App() {
       id: "categoryFilter",
       type: "singleSelect",
       label: "Label",
-      items: categoryOptions,
-      selectedItem: { id: "option2", label: "Option 2" },
+      options: categoryOptions,
+      selectedOption: { id: "option2", label: "Option 2" },
     },
     {
       id: "statusFilter",
       type: "singleSelect",
       label: "Label",
-      items: statusOptions,
+      options: statusOptions,
     },
   ]);
 

@@ -16,7 +16,7 @@ function App() {
       id: "categoryFilter",
       type: "singleSelect",
       label: "Label",
-      items: categoryOptions,
+      options: categoryOptions,
     },
   ]);
 

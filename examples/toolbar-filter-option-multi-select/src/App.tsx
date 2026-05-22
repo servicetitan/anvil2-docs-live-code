@@ -26,8 +26,8 @@ function App() {
       id: "categoryFilter",
       type: "multiSelect",
       label: "Label",
-      items: categoryOptions,
-      selectedItems: [
+      options: categoryOptions,
+      selectedOptions: [
         { id: "option2", label: "Option 2" },
         { id: "option4", label: "Option 4" },
       ],
@@ -36,8 +36,8 @@ function App() {
       id: "statusFilter",
       type: "multiSelect",
       label: "Label",
-      items: statusOptions,
-      selectedItems: [],
+      options: statusOptions,
+      selectedOptions: [],
     },
   ]);
 

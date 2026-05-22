@@ -139,16 +139,16 @@ function App() {
       id: "categoryFilter",
       type: "singleSelect",
       label: "Single select",
-      items: categoryOptions,
-      selectedItem: { id: "option2", label: "Option 2" },
+      options: categoryOptions,
+      selectedOption: { id: "option2", label: "Option 2" },
     },
     // Multi select filter
     {
       id: "categoryMultiSelectFilter",
       type: "multiSelect",
       label: "Multi select",
-      items: multiSelectCategoryOptions,
-      selectedItems: [
+      options: multiSelectCategoryOptions,
+      selectedOptions: [
         { id: "option2", label: "Option 2" },
         { id: "option4", label: "Option 4" },
       ],
