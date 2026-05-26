@@ -1,179 +1,100 @@
 import { Grid, Tooltip, Text } from "@servicetitan/anvil2";
+import { core } from "@servicetitan/anvil2/token";
 
 function App() {
+  const { primitive } = core;
   const table = {
     high: {
       color: {
-        blue: {
-          "500": {
-            value: "#0265dcff",
-          },
-          "600": {
-            value: "#004491ff",
-          },
-        },
-        red: {
-          "500": {
-            value: "#e13212ff",
-          },
-          "600": {
-            value: "#bf2a00ff",
-          },
-        },
+        blue: { "500": primitive.ColorBlue500, "600": primitive.ColorBlue600 },
+        red: { "500": primitive.ColorRed500, "600": primitive.ColorRed600 },
         yellow: {
-          "500": {
-            value: "#ffbe00ff",
-          },
-          "600": {
-            value: "#de9500ff",
-          },
+          "500": primitive.ColorYellow500,
+          "600": primitive.ColorYellow600,
         },
         green: {
-          "500": {
-            value: "#007a4dff",
-          },
-          "600": {
-            value: "#005132ff",
-          },
+          "500": primitive.ColorGreen500,
+          "600": primitive.ColorGreen600,
         },
         "blue-grey": {
-          "500": {
-            value: "#6a7a85ff",
-          },
-          "600": {
-            value: "#576671ff",
-          },
+          "500": primitive.ColorBlueGrey500,
+          "600": primitive.ColorBlueGrey600,
         },
         orange: {
-          "500": {
-            value: "#b14c00ff",
-          },
-          "600": {
-            value: "#7a2f00ff",
-          },
+          "500": primitive.ColorOrange500,
+          "600": primitive.ColorOrange600,
         },
-        cyan: {
-          "500": {
-            value: "#0ca5c0ff",
-          },
-          "600": {
-            value: "#038299ff",
-          },
-        },
+        cyan: { "500": primitive.ColorCyan500, "600": primitive.ColorCyan600 },
         purple: {
-          "500": {
-            value: "#4f3a9eff",
-          },
-          "600": {
-            value: "#422799ff",
-          },
+          "500": primitive.ColorPurple500,
+          "600": primitive.ColorPurple600,
         },
         magenta: {
-          "500": {
-            value: "#982071ff",
-          },
-          "600": {
-            value: "#7d165bff",
-          },
+          "500": primitive.ColorMagenta500,
+          "600": primitive.ColorMagenta600,
         },
       },
     },
     medium: {
       color: {
         blue: {
-          "200": { value: "#b5deffff" },
-          "300": { value: "#78bbfaff" },
-          "400": { value: "#3892f3ff" },
+          "200": primitive.ColorBlue200,
+          "300": primitive.ColorBlue300,
+          "400": primitive.ColorBlue400,
         },
         red: {
-          "200": { value: "#ffb2a0ff" },
-          "300": { value: "#ff745fff" },
-          "400": { value: "#f94d32ff" },
+          "200": primitive.ColorRed200,
+          "300": primitive.ColorRed300,
+          "400": primitive.ColorRed400,
         },
         yellow: {
-          "200": { value: "#fff0b1ff" },
-          "300": { value: "#ffe278ff" },
-          "400": { value: "#ffc902ff" },
+          "200": primitive.ColorYellow200,
+          "300": primitive.ColorYellow300,
+          "400": primitive.ColorYellow400,
         },
         green: {
-          "200": { value: "#89ecbcff" },
-          "300": { value: "#49cc93ff" },
-          "400": { value: "#15a46eff" },
+          "200": primitive.ColorGreen200,
+          "300": primitive.ColorGreen300,
+          "400": primitive.ColorGreen400,
         },
         "blue-grey": {
-          "200": { value: "#d0d8ddff" },
-          "300": { value: "#b4c1c8ff" },
-          "400": { value: "#8c9ca5ff" },
+          "200": primitive.ColorBlueGrey200,
+          "300": primitive.ColorBlueGrey300,
+          "400": primitive.ColorBlueGrey400,
         },
         orange: {
-          "200": { value: "#fdd291ff" },
-          "300": { value: "#ffa037ff" },
-          "400": { value: "#e46f00ff" },
+          "200": primitive.ColorOrange200,
+          "300": primitive.ColorOrange300,
+          "400": primitive.ColorOrange400,
         },
         cyan: {
-          "200": { value: "#b1f3faff" },
-          "300": { value: "#13ceeaff" },
-          "400": { value: "#08bfdfff" },
+          "200": primitive.ColorCyan200,
+          "300": primitive.ColorCyan300,
+          "400": primitive.ColorCyan400,
         },
         purple: {
-          "200": { value: "#c1b6f2ff" },
-          "300": { value: "#8772e5ff" },
-          "400": { value: "#6954c0ff" },
+          "200": primitive.ColorPurple200,
+          "300": primitive.ColorPurple300,
+          "400": primitive.ColorPurple400,
         },
         magenta: {
-          "200": { value: "#faafe2ff" },
-          "300": { value: "#d949a9ff" },
-          "400": { value: "#b52d88ff" },
+          "200": primitive.ColorMagenta200,
+          "300": primitive.ColorMagenta300,
+          "400": primitive.ColorMagenta400,
         },
       },
     },
     low: {
       color: {
-        blue: {
-          "100": {
-            value: "#e0f2ffff",
-          },
-        },
-        red: {
-          "100": {
-            value: "#ffece9ff",
-          },
-        },
-        yellow: {
-          "100": {
-            value: "#fff9e2ff",
-          },
-        },
-        green: {
-          "100": {
-            value: "#cef8e0ff",
-          },
-        },
-        "blue-grey": {
-          "100": {
-            value: "#eaeff2ff",
-          },
-        },
-        orange: {
-          "100": {
-            value: "#ffecccff",
-          },
-        },
-        cyan: {
-          "100": {
-            value: "#e3fcffff",
-          },
-        },
-        purple: {
-          "100": {
-            value: "#f1edffff",
-          },
-        },
-        magenta: {
-          "100": {
-            value: "#fbeaf5ff",
-          },
-        },
+        blue: { "100": primitive.ColorBlue100 },
+        red: { "100": primitive.ColorRed100 },
+        yellow: { "100": primitive.ColorYellow100 },
+        green: { "100": primitive.ColorGreen100 },
+        "blue-grey": { "100": primitive.ColorBlueGrey100 },
+        orange: { "100": primitive.ColorOrange100 },
+        cyan: { "100": primitive.ColorCyan100 },
+        purple: { "100": primitive.ColorPurple100 },
+        magenta: { "100": primitive.ColorMagenta100 },
       },
     },
   };
