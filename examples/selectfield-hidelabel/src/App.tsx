@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Flex } from "@servicetitan/anvil2";
-import { SelectFieldSync, SelectFieldOption } from "@servicetitan/anvil2/beta";
+import { SelectFieldSync, SelectFieldOption } from "@servicetitan/anvil2";
 
 const options = [
   { id: 1, label: "Option A" },

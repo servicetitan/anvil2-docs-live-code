@@ -3,7 +3,7 @@ import {
   SelectMenu,
   SelectMenuHandle,
   SelectMenuOption,
-} from "@servicetitan/anvil2/beta";
+} from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 
 function App() {

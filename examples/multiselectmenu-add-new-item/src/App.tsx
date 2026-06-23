@@ -3,7 +3,7 @@ import {
   MultiSelectMenu,
   MultiSelectMenuHandle,
   MultiSelectMenuOption,
-} from "@servicetitan/anvil2/beta";
+} from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 
 type Tag = MultiSelectMenuOption & { color: string };

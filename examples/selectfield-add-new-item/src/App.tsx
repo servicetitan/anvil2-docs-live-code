@@ -3,7 +3,7 @@ import {
   SelectField,
   SelectFieldHandle,
   SelectFieldOption,
-} from "@servicetitan/anvil2/beta";
+} from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 
 type Customer = SelectFieldOption & { phone: string };

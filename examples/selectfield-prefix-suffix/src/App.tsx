@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SelectFieldSync, SelectFieldOption } from "@servicetitan/anvil2/beta";
+import { SelectFieldSync, SelectFieldOption } from "@servicetitan/anvil2";
 
 const options: SelectFieldOption[] = [
   { id: 1, label: "0-25" },

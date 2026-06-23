@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  MultiSelectField,
-  MultiSelectFieldOption,
-} from "@servicetitan/anvil2/beta";
+import { MultiSelectField, MultiSelectFieldOption } from "@servicetitan/anvil2";
 
 const allBooks: MultiSelectFieldOption[] = [
   { id: 1, label: "The Martian" },

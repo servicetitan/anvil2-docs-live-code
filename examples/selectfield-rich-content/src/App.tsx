@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SelectField, SelectFieldOption } from "@servicetitan/anvil2/beta";
+import { SelectField, SelectFieldOption } from "@servicetitan/anvil2";
 
 const options: SelectFieldOption[] = [
   {

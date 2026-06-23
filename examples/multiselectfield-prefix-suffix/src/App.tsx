@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   MultiSelectFieldSync,
   MultiSelectFieldOption,
-} from "@servicetitan/anvil2/beta";
+} from "@servicetitan/anvil2";
 
 const options: MultiSelectFieldOption[] = [
   { id: 1, label: "bug" },
