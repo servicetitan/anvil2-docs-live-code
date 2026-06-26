@@ -1,19 +1,14 @@
-import { Radio, Flex, Text } from "@servicetitan/anvil2";
+import { Radio, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
     <Radio.Group
       legend={
-        <Flex direction="column" gap="0">
-          <Text variant="headline" el="h3" size="small">
-            Assign geofence tracking to vehicles
-          </Text>
-          <Text>
-            A geofence can be applied to a selection of individual vehicles or
-            assigned to one or more vehicle groups.
-          </Text>
-        </Flex>
+        <Text variant="headline" el="h3" size="small">
+          Assign geofence tracking to vehicles
+        </Text>
       }
+      description="A geofence can be applied to a selection of individual vehicles or assigned to one or more vehicle groups."
     >
       <Radio
         name="c1"
