@@ -5,22 +5,24 @@ import {
   Card,
   ButtonCompound,
   Icon,
+  Button,
 } from "@servicetitan/anvil2";
 import Build from "@servicetitan/anvil2/assets/icons/material/round/build.svg";
 import Book from "@servicetitan/anvil2/assets/icons/material/round/book.svg";
 import Pause from "@servicetitan/anvil2/assets/icons/material/round/pause.svg";
 import Alarm from "@servicetitan/anvil2/assets/icons/material/round/alarm.svg";
+import ArrowForward from "@servicetitan/anvil2/assets/icons/material/round/arrow_forward.svg";
 import { core } from "@servicetitan/anvil2/token";
 
 function App() {
   return (
     <Flex
-      alignItems="center"
+      alignItems="flex-end"
       justifyContent="center"
       direction="column"
       gap={6}
     >
-      <Flex alignItems="center" direction="column">
+      <Flex alignItems="center" direction="column" style={{ width: "100%" }}>
         <Text variant="headline" el="h2">
           Welcome to Reports
         </Text>
@@ -118,6 +120,9 @@ function App() {
           </ButtonCompound>
         </Grid.Item>
       </Grid>
+      <Button icon={{ after: ArrowForward }}>
+        Or start from an empty project
+      </Button>
     </Flex>
   );
 }
