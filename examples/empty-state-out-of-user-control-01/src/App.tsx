@@ -34,7 +34,7 @@ function App() {
         />
 
         <Text variant="headline" el="h2">
-          You Account is Being Migrated
+          Your Account is Being Migrated
         </Text>
         <Text subdued style={{ textAlign: "center" }}>
           We are working on setting up your account. Verifying the information
