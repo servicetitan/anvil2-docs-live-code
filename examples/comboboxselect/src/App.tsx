@@ -1,4 +1,4 @@
-import { Combobox } from "@servicetitan/anvil2";
+import { Combobox, ComboboxSelect } from "@servicetitan/anvil2";
 import { useState } from "react";
 
 type Item = {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div style={{ minWidth: "384px", minHeight: "284px" }}>
-      <Combobox.Select
+      <ComboboxSelect
         items={items}
         itemToString={(item) => (item ? item.name : "")}
         itemToKey={(item) => (item ? item.id : null)}
@@ -47,7 +47,7 @@ function App() {
             </Combobox.List>
           )}
         </Combobox.Content>
-      </Combobox.Select>
+      </ComboboxSelect>
     </div>
   );
 }

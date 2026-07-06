@@ -3,7 +3,7 @@ import {
   type Filter,
   type CustomFilter,
 } from "@servicetitan/anvil2/beta";
-import { Radio, Combobox, Flex } from "@servicetitan/anvil2";
+import { Radio, Combobox, ComboboxSelect, Flex } from "@servicetitan/anvil2";
 import { useState, useEffect } from "react";
 
 type ComboboxItem = {
@@ -33,7 +33,7 @@ function OperatorCombobox() {
   );
 
   return (
-    <Combobox.Select
+    <ComboboxSelect
       disableClearSelection
       items={comboboxItems}
       itemToString={(item) => (item ? item.label : "")}
@@ -53,7 +53,7 @@ function OperatorCombobox() {
           </Combobox.List>
         )}
       </Combobox.Content>
-    </Combobox.Select>
+    </ComboboxSelect>
   );
 }
 
@@ -115,8 +115,7 @@ function App() {
   // Update label based on current filter value
   useEffect(() => {
     const currentFilter = filters.find((f) => f.id === "customFilterId") as
-      | CustomFilter<CustomFilterValue>
-      | undefined;
+      CustomFilter<CustomFilterValue> | undefined;
     if (currentFilter) {
       const currentValue = currentFilter.value;
       const newLabel = currentValue
