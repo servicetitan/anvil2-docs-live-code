@@ -182,8 +182,7 @@ function App() {
   // Update label based on current filter value for custom filter
   useEffect(() => {
     const currentFilter = filters.find((f) => f.id === "customFilterId") as
-      | CustomFilter<CustomFilterValue>
-      | undefined;
+      CustomFilter<CustomFilterValue> | undefined;
     if (currentFilter) {
       const currentValue = currentFilter.value;
       const newLabel = currentValue
