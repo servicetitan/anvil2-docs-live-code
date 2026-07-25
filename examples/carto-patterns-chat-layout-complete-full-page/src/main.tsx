@@ -11,16 +11,7 @@ createRoot(document.getElementById("root")!).render(
     <Toaster id="app-toaster" />
 
     <AnvilProvider>
-      <CartoTheme
-        appearance="light"
-        style={{
-          backgroundColor: "#ffffff",
-          color: "#141414",
-          width: "100%",
-          minHeight: "100%",
-          height: "100%",
-        }}
-      >
+      <CartoTheme appearance="light" className="carto-theme-preview">
         <App />
       </CartoTheme>
     </AnvilProvider>
