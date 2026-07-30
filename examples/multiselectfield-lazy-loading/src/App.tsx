@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { MultiSelectField, MultiSelectFieldOption } from "@servicetitan/anvil2";
+import {
+  MultiSelectField,
+  type MultiSelectFieldOption,
+} from "@servicetitan/anvil2";
 
 const allBooks = Array.from({ length: 100 }, (_, i) => ({
   id: `book-${i + 1}`,

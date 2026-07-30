@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import {
   SelectMenu,
-  SelectMenuHandle,
-  SelectMenuOption,
+  type SelectMenuHandle,
+  type SelectMenuOption,
 } from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   MultiSelectFieldSync,
-  MultiSelectFieldOption,
+  type MultiSelectFieldOption,
 } from "@servicetitan/anvil2";
 
 const options: MultiSelectFieldOption[] = [

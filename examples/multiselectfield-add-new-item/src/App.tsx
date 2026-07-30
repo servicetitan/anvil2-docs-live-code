@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import {
   MultiSelectField,
-  MultiSelectFieldHandle,
-  MultiSelectFieldOption,
+  type MultiSelectFieldHandle,
+  type MultiSelectFieldOption,
 } from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 

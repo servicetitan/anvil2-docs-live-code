@@ -1,5 +1,5 @@
 import { Toolbar } from "@servicetitan/anvil2/beta";
-import { useState, ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");

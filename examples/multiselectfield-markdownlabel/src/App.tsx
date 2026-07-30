@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Flex } from "@servicetitan/anvil2";
-import { MultiSelectFieldSync, SelectFieldOption } from "@servicetitan/anvil2";
+import {
+  MultiSelectFieldSync,
+  type SelectFieldOption,
+} from "@servicetitan/anvil2";
 
 const options = [
   { id: 1, label: "Option A" },

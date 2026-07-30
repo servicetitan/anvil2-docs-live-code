@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Flex } from "@servicetitan/anvil2";
 import {
   MultiSelectFieldSync,
-  MultiSelectFieldOption,
+  type MultiSelectFieldOption,
 } from "@servicetitan/anvil2";
 
 const options: MultiSelectFieldOption[] = [

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import {
   SelectField,
-  SelectFieldHandle,
-  SelectFieldOption,
+  type SelectFieldHandle,
+  type SelectFieldOption,
 } from "@servicetitan/anvil2";
 import { Button, Dialog, Flex, TextField } from "@servicetitan/anvil2";
 
