@@ -8,7 +8,6 @@ function App() {
     <Flex direction="column" gap="3" alignItems="center">
       <Calendar
         defaultValue={date}
-        focusedDate={new Date().toISOString()}
         onSelection={(date) => setDate(date.value)}
       />
       {date && `Selected Date: ${date}`}

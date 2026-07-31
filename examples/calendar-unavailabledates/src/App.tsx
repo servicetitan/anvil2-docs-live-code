@@ -4,7 +4,7 @@ function App() {
   return (
     <Flex alignItems="center" direction="column">
       <Calendar
-        focusedDate="2024-06-01"
+        defaultFocusedDate="2024-06-01"
         unavailable={{
           dates: [
             "2024-06-02",
