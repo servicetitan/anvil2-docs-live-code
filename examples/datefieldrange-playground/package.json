@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@servicetitan/anvil2": "latest",
+    "@servicetitan/anvil2-ai-kit": "latest",
+    "@servicetitan/anvil2-charts-kit": "latest",
     "@servicetitan/anvil2-ext-atlas": "latest",
     "@servicetitan/anvil2-ext-charts": "latest",
-    "@servicetitan/anvil2-illustrations": "latest",
-    "@servicetitan/anvil2-ai-kit": "latest",
     "@servicetitan/anvil2-icons": "latest",
+    "@servicetitan/anvil2-illustrations": "latest",
     "@servicetitan/carto-tokens": "latest",
     "@amcharts/amcharts5": "^5",
+    "echarts": "^5.5.0",
     "react": "^18",
     "react-dom": "^18"
   },
