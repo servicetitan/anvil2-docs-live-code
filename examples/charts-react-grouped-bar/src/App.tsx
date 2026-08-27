@@ -15,7 +15,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="monochrome" width={480} height={320} />
+    <Chart
+      option={option}
+      variant="monochrome"
+      width={480}
+      height={320}
+      accessibilityLabel="Grouped bar. Sales by region and quarter."
+    />
   );
 }
 

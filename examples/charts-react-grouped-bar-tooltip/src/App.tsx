@@ -47,6 +47,7 @@ function App() {
         renderTooltip={renderTooltip}
         width={480}
         height={320}
+        accessibilityLabel="Grouped bar. Sales by region and quarter."
       />
     </CartoTheme>
   );

@@ -33,7 +33,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="monochrome" width={480} height={320} />
+    <Chart
+      option={option}
+      variant="monochrome"
+      width={480}
+      height={320}
+      accessibilityLabel="Stacked bar. Funnel stages by month."
+    />
   );
 }
 

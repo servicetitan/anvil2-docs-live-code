@@ -69,6 +69,7 @@ function App() {
         renderTooltip={renderTooltip}
         width={480}
         height={300}
+        accessibilityLabel="Area chart. Stacked revenue components by month."
       />
     </CartoTheme>
   );

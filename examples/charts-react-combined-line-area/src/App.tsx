@@ -37,7 +37,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="categorical" width={480} height={320} />
+    <Chart
+      option={option}
+      variant="categorical"
+      width={480}
+      height={320}
+      accessibilityLabel="Combined chart. Stacked revenue and costs with a target line."
+    />
   );
 }
 

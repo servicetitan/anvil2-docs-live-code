@@ -49,6 +49,7 @@ function App() {
         renderTooltip={renderTooltip}
         width={480}
         height={300}
+        accessibilityLabel="Line chart. Revenue by month."
       />
     </CartoTheme>
   );

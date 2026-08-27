@@ -37,6 +37,7 @@ function App() {
       variant="categorical"
       width={480}
       height={300}
+      accessibilityLabel="Bar chart. Highlighted category among the rest."
     />
   );
 }

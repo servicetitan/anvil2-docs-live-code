@@ -51,6 +51,7 @@ function App() {
         renderTooltip={renderTooltip}
         width={480}
         height={300}
+        accessibilityLabel="Donut chart. Revenue by channel."
       />
     </CartoTheme>
   );

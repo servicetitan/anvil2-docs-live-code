@@ -41,6 +41,7 @@ function App() {
       variant="categorical"
       width={480}
       height={300}
+      accessibilityLabel="Line chart. Series A and B by month."
     />
   );
 }

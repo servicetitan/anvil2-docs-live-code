@@ -16,7 +16,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="monochrome" width={560} height={300} />
+    <Chart
+      option={option}
+      variant="monochrome"
+      width={560}
+      height={300}
+      accessibilityLabel="Bar chart. Sales by region."
+    />
   );
 }
 

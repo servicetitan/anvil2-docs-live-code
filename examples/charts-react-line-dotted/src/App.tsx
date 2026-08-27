@@ -27,7 +27,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="categorical" width={480} height={300} />
+    <Chart
+      option={option}
+      variant="categorical"
+      width={480}
+      height={300}
+      accessibilityLabel="Line chart. Actual and target by month."
+    />
   );
 }
 

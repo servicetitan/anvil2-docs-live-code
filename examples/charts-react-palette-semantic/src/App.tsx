@@ -39,6 +39,7 @@ function App() {
       variant="categorical"
       height={180}
       width={560}
+      accessibilityLabel="Stacked bar. Unpaid invoices by aging bucket."
     />
   );
 }

@@ -21,7 +21,13 @@ function App() {
   };
 
   return (
-    <Chart option={option} variant="categorical" width={480} height={320} />
+    <Chart
+      option={option}
+      variant="categorical"
+      width={480}
+      height={320}
+      accessibilityLabel="Combined chart. Actual bars with a target line."
+    />
   );
 }
 

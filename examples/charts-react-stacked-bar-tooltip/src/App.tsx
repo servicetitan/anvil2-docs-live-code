@@ -65,6 +65,7 @@ function App() {
         renderTooltip={renderTooltip}
         width={480}
         height={320}
+        accessibilityLabel="Stacked bar. Funnel stages by month."
       />
     </CartoTheme>
   );

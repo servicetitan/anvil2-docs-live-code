@@ -8,7 +8,14 @@ function App() {
     series: [{ type: "bar", data: [1200, 980, 1450, 1100] }],
   };
 
-  return <Chart option={option} width={480} height={300} />;
+  return (
+    <Chart
+      option={option}
+      width={480}
+      height={300}
+      accessibilityLabel="Bar chart. Sales by region."
+    />
+  );
 }
 
 export default App;
