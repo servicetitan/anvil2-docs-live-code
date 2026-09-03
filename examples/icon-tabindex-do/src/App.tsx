@@ -3,14 +3,12 @@ import Warning from "@servicetitan/anvil2/assets/icons/material/round/warning.sv
 
 function App() {
   return (
-    <div style={{ paddingBlockStart: "2.5rem", paddingInline: "4rem" }}>
-      <Tooltip>
-        <Tooltip.Trigger>
-          <Icon svg={Warning} tabIndex={0} />
-        </Tooltip.Trigger>
-        <Tooltip.Content>Hello, I&apos;m a tooltip</Tooltip.Content>
-      </Tooltip>
-    </div>
+    <Tooltip>
+      <Tooltip.Trigger>
+        <Icon svg={Warning} tabIndex={0} />
+      </Tooltip.Trigger>
+      <Tooltip.Content>Hello, I&apos;m a tooltip</Tooltip.Content>
+    </Tooltip>
   );
 }
 

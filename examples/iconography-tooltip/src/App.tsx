@@ -4,10 +4,7 @@ import Info from "@servicetitan/anvil2/assets/icons/material/round/info.svg";
 
 function App() {
   return (
-    <Flex
-      gap="2"
-      style={{ paddingBlockStart: "3.5rem", paddingInline: "7.5rem" }}
-    >
+    <Flex gap="2">
       <Tooltip>
         <Tooltip.Trigger>
           <Button icon={Edit} appearance="ghost" />

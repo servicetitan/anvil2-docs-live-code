@@ -3,15 +3,7 @@ import BorderClear from "@servicetitan/anvil2/assets/icons/material/round/border
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "18rem",
-        paddingInline: "7rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Trigger</Popover.Button>
         <Popover.Content style={{ maxWidth: "300px", paddingTop: "8px" }}>
@@ -32,7 +24,7 @@ function App() {
           </Flex>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 

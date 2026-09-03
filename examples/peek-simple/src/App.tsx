@@ -5,15 +5,7 @@ import Location from "@servicetitan/anvil2/assets/icons/material/round/location_
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "12rem",
-        paddingInline: "5.5rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Jane Doe</Popover.Button>
         <Popover.Content>
@@ -60,7 +52,7 @@ function App() {
           </Toolbar>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 

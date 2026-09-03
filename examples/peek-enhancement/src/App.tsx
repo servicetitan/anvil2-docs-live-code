@@ -2,15 +2,7 @@ import { Popover, Flex, Text, Chip, Avatar, Grid } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "16.5rem",
-        paddingInline: "3.5rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Costco Wholesale Corporation</Popover.Button>
         <Popover.Content style={{ maxWidth: "360px" }}>
@@ -68,7 +60,7 @@ function App() {
           </Flex>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 

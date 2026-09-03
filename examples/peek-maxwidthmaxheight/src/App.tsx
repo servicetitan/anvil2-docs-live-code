@@ -2,22 +2,13 @@ import { Popover, Flex, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "32.5rem",
-        paddingInline: "8rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Trigger</Popover.Button>
         <Popover.Content>
           <Flex
             style={{
-              backgroundColor: "var(--color-purple-100)",
-              borderColor: "var(--color-purple-400)",
+              borderColor: "var(--a2-border-color-subdued, #e6e6e6)",
               borderStyle: "dashed",
               borderWidth: "1px",
               borderRadius: "6px",
@@ -30,37 +21,19 @@ function App() {
             alignSelf="stretch"
             justifyContent="center"
           >
-            <Text
-              size="small"
-              style={{
-                textAlign: "center",
-                color: "var(--color-purple-400)",
-              }}
-            >
+            <Text subdued size="small" style={{ textAlign: "center" }}>
               Inner Popover content suggested max dimensions (16px padding):
             </Text>
-            <Text
-              size="small"
-              style={{
-                textAlign: "center",
-                color: "var(--color-purple-400)",
-              }}
-            >
+            <Text subdued size="small" style={{ textAlign: "center" }}>
               328px width
             </Text>
-            <Text
-              size="small"
-              style={{
-                textAlign: "center",
-                color: "var(--color-purple-400)",
-              }}
-            >
+            <Text subdued size="small" style={{ textAlign: "center" }}>
               508px height
             </Text>
           </Flex>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 

@@ -14,15 +14,7 @@ import History from "@servicetitan/anvil2/assets/icons/material/round/history.sv
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "8rem",
-        paddingInline: "5rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Jane Doe</Popover.Button>
         <Popover.Content>
@@ -89,7 +81,7 @@ function App() {
           </Toolbar>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 

@@ -1,10 +1,11 @@
 import { Markdown } from "@servicetitan/anvil2-ai-kit";
 
 const source = [
-  "| Invoice | Status |",
-  "| ------- | ------ |",
-  "| #1024 | Paid |",
-  "| #1025 | Overdue |",
+  "| Language | Typing | Use Case |",
+  "| -------- | ------ | -------- |",
+  "| TypeScript | Static (Strong) | Web / Scalable Apps |",
+  "| Python | Dynamic | AI / Data Science |",
+  "| Rust | Static (Safe) | Systems / WebAssembly |",
 ].join("\n");
 
 function App() {

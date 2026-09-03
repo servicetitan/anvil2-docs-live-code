@@ -3,11 +3,7 @@ import Info from "@servicetitan/anvil2/assets/icons/material/round/info.svg";
 
 function App() {
   return (
-    <Flex
-      direction="column"
-      gap="4"
-      style={{ paddingBlockStart: "3.5rem", paddingInline: "3.5rem" }}
-    >
+    <Flex direction="column" gap="4">
       <Tooltip defaultOpen>
         <Tooltip.Trigger>
           <Button icon={Info}>Hover over me</Button>

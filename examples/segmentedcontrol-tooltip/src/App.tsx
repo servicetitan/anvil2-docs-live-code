@@ -10,7 +10,7 @@ function App() {
   const [selected, setSelected] = useState("upload");
 
   return (
-    <Flex direction="column" style={{ paddingBlockStart: "2rem" }}>
+    <Flex direction="column">
       <SegmentedControl selected={selected} onChange={setSelected}>
         <Tooltip>
           <Tooltip.Trigger>

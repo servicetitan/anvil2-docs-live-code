@@ -5,10 +5,7 @@ import Pause from "@servicetitan/anvil2/assets/icons/material/round/pause.svg";
 
 function App() {
   return (
-    <Flex
-      gap="2"
-      style={{ paddingBlockStart: "2.5rem", paddingInline: "0.5rem" }}
-    >
+    <Flex gap="2">
       <Tooltip>
         <Tooltip.Trigger>
           <Button icon={Add} aria-label="add" />

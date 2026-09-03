@@ -2,32 +2,30 @@ import { Tooltip, Card, Button, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div style={{ paddingBlockStart: "4rem", paddingInline: "4rem" }}>
-      <Card
-        gap={4}
-        alignItems="center"
+    <Card
+      gap={4}
+      alignItems="center"
+      style={{
+        background: "var(--background-color-inverted-strong)",
+      }}
+    >
+      <Tooltip offset={24} defaultOpen>
+        <Tooltip.Trigger>
+          <Button appearance="primary">Hover over me</Button>
+        </Tooltip.Trigger>
+        <Tooltip.Content style={{ maxWidth: "20rem" }}>
+          Prevent the tooltip background from getting lost in the card
+          background.
+        </Tooltip.Content>
+      </Tooltip>
+      <Text
         style={{
-          background: "var(--background-color-inverted-strong)",
+          color: "var(--foreground-color-inverted)",
         }}
       >
-        <Tooltip offset={24} defaultOpen>
-          <Tooltip.Trigger>
-            <Button appearance="primary">Hover over me</Button>
-          </Tooltip.Trigger>
-          <Tooltip.Content style={{ maxWidth: "20rem" }}>
-            Prevent the tooltip background from getting lost in the card
-            background.
-          </Tooltip.Content>
-        </Tooltip>
-        <Text
-          style={{
-            color: "var(--foreground-color-inverted)",
-          }}
-        >
-          Lorem ipsum dolor sit amet.
-        </Text>
-      </Card>
-    </div>
+        Lorem ipsum dolor sit amet.
+      </Text>
+    </Card>
   );
 }
 

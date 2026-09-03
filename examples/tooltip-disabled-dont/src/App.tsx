@@ -2,14 +2,7 @@ import { Tooltip, Flex, Button } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex
-      gap={3}
-      style={{
-        paddingBlockStart: "2.5rem",
-        paddingInlineStart: "5rem",
-      }}
-      justifyContent="center"
-    >
+    <Flex gap={3} justifyContent="center">
       <Button>Cancel</Button>
       <Tooltip open placement="top-end">
         <Tooltip.Trigger>

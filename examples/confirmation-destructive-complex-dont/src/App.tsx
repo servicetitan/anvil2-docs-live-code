@@ -2,13 +2,7 @@ import { Popover, Flex, Button, Text, TextField } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <Flex
-      gap="2"
-      style={{
-        paddingBlockStart: "16rem",
-        paddingInlineEnd: "5rem",
-      }}
-    >
+    <Flex gap="2">
       <Button>Back</Button>
       <Popover open placement="top" disableShift disableFlip modal>
         <Popover.Button appearance="primary">Merge</Popover.Button>

@@ -1,24 +1,22 @@
-import { Text, Flex, Card, Icon, Button, Divider } from "@servicetitan/anvil2";
+import {
+  Text,
+  Flex,
+  Card,
+  Icon,
+  Button,
+  Divider,
+  usePrefersColorScheme,
+} from "@servicetitan/anvil2";
 import emptyStateImageLight from "../assets/empty_state-no_search_results-light.png";
 import emptyStateImageDark from "../assets/empty_state-no_search_results-dark.png";
 import { core } from "@servicetitan/anvil2/token";
-import { useEffect, useState } from "react";
 import Circle from "@servicetitan/anvil2/assets/icons/material/round/circle.svg";
 
 function App() {
-  const [isDark, setIsDark] = useState(
-    () => window.matchMedia("(prefers-color-scheme: dark)").matches,
-  );
+  const { mode } = usePrefersColorScheme();
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-  // temp end
-
-  const emptyStateImage = isDark ? emptyStateImageDark : emptyStateImageLight;
+  const emptyStateImage =
+    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"

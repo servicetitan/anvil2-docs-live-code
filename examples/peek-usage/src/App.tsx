@@ -2,15 +2,7 @@ import { Popover, Flex, Text, Avatar } from "@servicetitan/anvil2";
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        placeItems: "center",
-        paddingBlockStart: "6rem",
-        paddingInline: "4rem",
-      }}
-    >
+    <Flex justifyContent="center" placeItems="center">
       <Popover open placement="top" disableShift disableFlip>
         <Popover.Button>Jane Doe</Popover.Button>
         <Popover.Content>
@@ -27,7 +19,7 @@ function App() {
           </Flex>
         </Popover.Content>
       </Popover>
-    </div>
+    </Flex>
   );
 }
 
