@@ -6,10 +6,10 @@ import {
   Text,
   usePrefersColorScheme,
 } from "@servicetitan/anvil2";
-import ResidentialLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-residential-evergreen-success-light.svg";
-import ResidentialDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-residential-evergreen-success-dark.svg";
-import CommercialLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-commercial-evergreen-success-light.svg";
-import CommercialDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-commercial-evergreen-success-dark.svg";
+import {
+  EmptyStateCommercialEvergreenSuccess,
+  EmptyStateResidentialEvergreenSuccess,
+} from "@servicetitan/anvil2-illustrations";
 
 // Matches the Chip fills from Figma; Chip derives the border and text
 // colors from this background automatically via useAccessibleColor.
@@ -61,9 +61,6 @@ function TradeLabel({ children }: { children: ReactNode }) {
 function App() {
   const { mode } = usePrefersColorScheme();
 
-  const Residential = mode === "dark" ? ResidentialDark : ResidentialLight;
-  const Commercial = mode === "dark" ? CommercialDark : CommercialLight;
-
   return (
     <AnvilProvider themeData={{ mode }}>
       <Flex direction="column" gap={6}>
@@ -74,14 +71,18 @@ function App() {
             color={RESIDENTIAL_CHIP_COLOR}
           />
           <Flex direction="column" alignItems="center" gap={2}>
-            <IllustrationBox Illustration={Residential} />
+            <IllustrationBox
+              Illustration={EmptyStateResidentialEvergreenSuccess}
+            />
             <TradeLabel>{TRADES_LABEL}</TradeLabel>
           </Flex>
         </Flex>
         <Flex direction="column" gap={3} style={{ width: "fit-content" }}>
           <Chip label="Commercial" size="small" color={COMMERCIAL_CHIP_COLOR} />
           <Flex direction="column" alignItems="center" gap={2}>
-            <IllustrationBox Illustration={Commercial} />
+            <IllustrationBox
+              Illustration={EmptyStateCommercialEvergreenSuccess}
+            />
             <TradeLabel>{TRADES_LABEL}</TradeLabel>
           </Flex>
         </Flex>

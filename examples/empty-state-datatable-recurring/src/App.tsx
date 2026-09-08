@@ -1,7 +1,6 @@
 import { Text, Flex, Link } from "@servicetitan/anvil2";
 import { DataTable, createColumnHelper } from "@servicetitan/anvil2/beta";
-import NoSearchResultsLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-light.svg";
-import NoSearchResultsDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-dark.svg";
+import { EmptyStateNoSearchResults as NoSearchResults } from "@servicetitan/anvil2-illustrations";
 
 type Invoice = {
   invoiceNumber: string;
@@ -37,7 +36,7 @@ function App() {
       data={[]}
       columns={columns}
       emptyState={{
-        svg: { light: NoSearchResultsLight, dark: NoSearchResultsDark },
+        svg: NoSearchResults,
         content: (
           <Flex
             alignItems="center"

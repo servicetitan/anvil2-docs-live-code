@@ -3,8 +3,7 @@ import {
   Text,
   usePrefersColorScheme,
 } from "@servicetitan/anvil2";
-import SuccessLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-success-light.svg";
-import SuccessDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-success-dark.svg";
+import { EmptyStateSuccess } from "@servicetitan/anvil2-illustrations";
 
 const ILLUSTRATION_WIDTH = 167;
 const ILLUSTRATION_HEIGHT = 140;
@@ -37,7 +36,6 @@ function Dot({ top, left }: { top: number; left: number }) {
 function App() {
   const { mode } = usePrefersColorScheme();
 
-  const Success = mode === "dark" ? SuccessDark : SuccessLight;
   const swatchColors = SWATCH_COLORS[mode];
 
   const illustrationDot = { top: 66, left: 68 };
@@ -47,7 +45,7 @@ function App() {
   return (
     <AnvilProvider themeData={{ mode }}>
       <div style={{ position: "relative", width: 460, height: 160 }}>
-        <Success
+        <EmptyStateSuccess
           aria-hidden="true"
           width={ILLUSTRATION_WIDTH}
           height={ILLUSTRATION_HEIGHT}

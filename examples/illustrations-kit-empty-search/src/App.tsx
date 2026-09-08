@@ -6,20 +6,16 @@ import {
   Text,
   usePrefersColorScheme,
 } from "@servicetitan/anvil2";
-import NoSearchResultsLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-light.svg";
-import NoSearchResultsDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-no-search-results-dark.svg";
+import { EmptyStateNoSearchResults } from "@servicetitan/anvil2-illustrations";
 
 function App() {
   const { mode } = usePrefersColorScheme();
-
-  const NoSearchResults =
-    mode === "dark" ? NoSearchResultsDark : NoSearchResultsLight;
 
   return (
     <AnvilProvider themeData={{ mode }}>
       <Card padding="large">
         <Flex direction="column" alignItems="center" gap={4}>
-          <NoSearchResults aria-hidden="true" height={200} />
+          <EmptyStateNoSearchResults aria-hidden="true" height={200} />
           <Text variant="headline" el="h2">
             No matching jobs
           </Text>

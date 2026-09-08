@@ -4,12 +4,11 @@ import {
   Flex,
   usePrefersColorScheme,
 } from "@servicetitan/anvil2";
-import FirstUseLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-first-use-light.svg";
-import FirstUseDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-first-use-dark.svg";
-import UserClearedLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-user-cleared-light.svg";
-import UserClearedDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-user-cleared-dark.svg";
-import ErrorStateLight from "@servicetitan/anvil2-illustrations/illustrations/empty-state-error-light.svg";
-import ErrorStateDark from "@servicetitan/anvil2-illustrations/illustrations/empty-state-error-dark.svg";
+import {
+  EmptyStateError,
+  EmptyStateFirstUse,
+  EmptyStateUserCleared,
+} from "@servicetitan/anvil2-illustrations";
 
 const ILLUSTRATION_WIDTH = 215;
 const ILLUSTRATION_HEIGHT = 180;
@@ -70,22 +69,18 @@ function IllustrationWithCallouts({
 function App() {
   const { mode } = usePrefersColorScheme();
 
-  const FirstUse = mode === "dark" ? FirstUseDark : FirstUseLight;
-  const UserCleared = mode === "dark" ? UserClearedDark : UserClearedLight;
-  const ErrorState = mode === "dark" ? ErrorStateDark : ErrorStateLight;
-
   return (
     <AnvilProvider themeData={{ mode }}>
       <Flex gap={6} wrap="wrap">
         <IllustrationWithCallouts
-          Illustration={FirstUse}
+          Illustration={EmptyStateFirstUse}
           callouts={[
             { top: 67, left: 181 },
             { top: 110, left: 172 },
           ]}
         />
         <IllustrationWithCallouts
-          Illustration={UserCleared}
+          Illustration={EmptyStateUserCleared}
           callouts={[
             { top: 41, left: 147 },
             { top: 97, left: 94 },
@@ -93,7 +88,7 @@ function App() {
           ]}
         />
         <IllustrationWithCallouts
-          Illustration={ErrorState}
+          Illustration={EmptyStateError}
           callouts={[
             { top: 95, left: 93 },
             { top: 122, left: 149 },
