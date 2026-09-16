@@ -4,8 +4,8 @@ function App() {
   return (
     <Flex direction="column" gap="3">
       <Text>
-        The appointment is on July 12, 2025, at 3:00 pm. The deadline is
-        12/07/2025 at 4pm.
+        The appointment is on September 10, 2026, at 3:00 pm. The deadline is
+        12/07/2026 at 4pm.
       </Text>
     </Flex>
   );

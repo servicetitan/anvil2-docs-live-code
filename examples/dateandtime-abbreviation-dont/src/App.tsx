@@ -3,7 +3,7 @@ import { Text, Flex } from "@servicetitan/anvil2";
 function App() {
   return (
     <Flex direction="column" gap="3">
-      <Text>Jul 12, 2025</Text>
+      <Text>Sep 10, 2026</Text>
     </Flex>
   );
 }
