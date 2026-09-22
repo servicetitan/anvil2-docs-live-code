@@ -1,4 +1,4 @@
-import { Layout, Page, Card, Text } from "@servicetitan/anvil2";
+import { Flex, Layout, Page, Text } from "@servicetitan/anvil2";
 
 function App() {
   return (
@@ -14,16 +14,15 @@ function App() {
         <Page.Content>
           <Layout variant="narrow">
             <Layout.Item span={12}>
-              <Card
-                background="strong"
-                justifyContent="center"
-                alignItems="center"
-                style={{ width: "100%", height: "12rem" }}
-              >
+              <Flex direction="column" gap="2">
                 <Text variant="headline" el="h2">
                   Layout
                 </Text>
-              </Card>
+                <Text>
+                  Place page sections directly in a Layout Item, separated by
+                  headings and spacing.
+                </Text>
+              </Flex>
             </Layout.Item>
           </Layout>
         </Page.Content>

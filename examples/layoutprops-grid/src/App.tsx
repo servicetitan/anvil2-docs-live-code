@@ -13,8 +13,7 @@ function App() {
         <Text variant="headline" el="h3">
           Card 1
         </Text>
-        <Card background="stronger" />
-        <Card background="stronger" />
+        <Text>Lorem ipsum dolor sit amet.</Text>
       </Card>
       <Card gridArea="2/2/3/5" flexDirection="column">
         <Text variant="headline" el="h3">
