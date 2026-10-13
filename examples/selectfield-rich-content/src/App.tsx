@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SelectField, type SelectFieldOption } from "@servicetitan/anvil2";
+import GroupIcon from "@servicetitan/anvil2/assets/icons/material/round/groups.svg";
 
 const options: SelectFieldOption[] = [
   {
@@ -8,6 +9,13 @@ const options: SelectFieldOption[] = [
   },
   {
     id: 2,
+    label: "Label + icon",
+    content: {
+      icon: { svg: GroupIcon },
+    },
+  },
+  {
+    id: 3,
     label: "Title + description",
     content: {
       title: "Title + description",
@@ -15,7 +23,16 @@ const options: SelectFieldOption[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
+    label: "Title + description + icon",
+    content: {
+      title: "Title + description + icon",
+      description: "A short description providing extra context",
+      icon: { svg: GroupIcon },
+    },
+  },
+  {
+    id: 5,
     label: "Title + chips",
     content: {
       title: "Title + chips",
@@ -23,7 +40,16 @@ const options: SelectFieldOption[] = [
     },
   },
   {
-    id: 4,
+    id: 6,
+    label: "Title + chips + icon",
+    content: {
+      title: "Title + chips + icon",
+      chips: [{ label: "Tag A" }, { label: "Tag B", color: "#F97316" }],
+      icon: { svg: GroupIcon },
+    },
+  },
+  {
+    id: 7,
     label: "Title + description + avatar",
     content: {
       title: "Title + description + avatar",
@@ -32,12 +58,32 @@ const options: SelectFieldOption[] = [
     },
   },
   {
-    id: 5,
+    id: 8,
+    label: "Title + description + avatar + icon",
+    content: {
+      title: "Title + description + avatar + icon",
+      description: "Option with an avatar",
+      avatar: { name: "Jane Doe", color: "#6366F1" },
+      icon: { svg: GroupIcon },
+    },
+  },
+  {
+    id: 9,
     label: "Title + description + chips",
     content: {
       title: "Title + description + chips",
       description: "Option with chip tags",
       chips: [{ label: "Tag A" }, { label: "Tag B", color: "#F97316" }],
+    },
+  },
+  {
+    id: 10,
+    label: "Title + description + chips + icon",
+    content: {
+      title: "Title + description + chips + icon",
+      description: "Option with chip tags",
+      chips: [{ label: "Tag A" }, { label: "Tag B", color: "#F97316" }],
+      icon: { svg: GroupIcon },
     },
   },
 ];

@@ -153,7 +153,7 @@ function App() {
           <td style={cell}>
             <Text variant="eyebrow" text="Eyebrow" />
           </td>
-          <td style={cell}>medium (500)</td>
+          <td style={cell}>bold (700)</td>
           <td style={cell}>10px/15px</td>
           <td style={cell}>0% / 0rem</td>
         </tr>
