@@ -1,17 +1,7 @@
-import {
-  Text,
-  Flex,
-  Button,
-  usePrefersColorScheme,
-} from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-no_search_results-light.png";
-import emptyStateImageDark from "../assets/empty_state-no_search_results-dark.png";
+import { Text, Flex, Button } from "@servicetitan/anvil2";
+import { EmptyStateNoSearchResults } from "@servicetitan/anvil2-illustrations";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"
@@ -21,7 +11,7 @@ function App() {
       style={{ maxWidth: "420px" }}
     >
       <Flex alignItems="center" direction="column">
-        <img src={emptyStateImage} alt="No results illustration" height={200} />
+        <EmptyStateNoSearchResults aria-hidden="true" height={200} />
 
         <Text variant="headline" el="h2">
           No Bookmarks

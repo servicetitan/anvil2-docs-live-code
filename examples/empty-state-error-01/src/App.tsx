@@ -1,18 +1,7 @@
-import {
-  Text,
-  Flex,
-  Link,
-  Button,
-  usePrefersColorScheme,
-} from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-error-light.png";
-import emptyStateImageDark from "../assets/empty_state-error-dark.png";
+import { Text, Flex, Link, Button } from "@servicetitan/anvil2";
+import { EmptyStateError } from "@servicetitan/anvil2-illustrations";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"
@@ -22,7 +11,7 @@ function App() {
       style={{ maxWidth: "420px" }}
     >
       <Flex alignItems="center" direction="column">
-        <img src={emptyStateImage} alt="Error illustration" height={200} />
+        <EmptyStateError aria-hidden="true" height={200} />
 
         <Text variant="headline" el="h2">
           We Didn&apos;t Catch That

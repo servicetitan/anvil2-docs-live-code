@@ -1,22 +1,9 @@
-import {
-  Text,
-  Flex,
-  Card,
-  Icon,
-  Button,
-  Divider,
-  usePrefersColorScheme,
-} from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-no_search_results-light.png";
-import emptyStateImageDark from "../assets/empty_state-no_search_results-dark.png";
+import { Text, Flex, Card, Icon, Button, Divider } from "@servicetitan/anvil2";
+import { EmptyStateNoSearchResults } from "@servicetitan/anvil2-illustrations";
 import { core } from "@servicetitan/anvil2/token";
 import Circle from "@servicetitan/anvil2/assets/icons/material/round/circle.svg";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"
@@ -25,7 +12,7 @@ function App() {
       gap={6}
     >
       <Flex alignItems="center" direction="column">
-        <img src={emptyStateImage} alt="No results illustration" height={200} />
+        <EmptyStateNoSearchResults aria-hidden="true" height={200} />
         <Text variant="headline" el="h2">
           Sorry, we couldn&apos;t find any results for &quot;
           <span style={{ color: core.semantic.ForegroundColorPrimary.value }}>

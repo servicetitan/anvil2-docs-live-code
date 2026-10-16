@@ -1,12 +1,7 @@
-import { Text, Flex, Link, usePrefersColorScheme } from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-success-light.png";
-import emptyStateImageDark from "../assets/empty_state-success-dark.png";
+import { Text, Flex, Link } from "@servicetitan/anvil2";
+import { EmptyStateSuccess } from "@servicetitan/anvil2-illustrations";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"
@@ -16,7 +11,7 @@ function App() {
       style={{ maxWidth: "420px" }}
     >
       <Flex alignItems="center" direction="column">
-        <img src={emptyStateImage} alt="Success illustration" height={200} />
+        <EmptyStateSuccess aria-hidden="true" height={200} />
 
         <Text subdued size="small" style={{ textAlign: "center" }}>
           Your report is up-to-date! Check back later for new updates. To see

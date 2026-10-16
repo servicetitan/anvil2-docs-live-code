@@ -1,12 +1,7 @@
-import { Text, Flex, usePrefersColorScheme } from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-user_cleared-light.png";
-import emptyStateImageDark from "../assets/empty_state-user_cleared-dark.png";
+import { Text, Flex } from "@servicetitan/anvil2";
+import { EmptyStateUserCleared } from "@servicetitan/anvil2-illustrations";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Flex
       alignItems="center"
@@ -16,11 +11,7 @@ function App() {
       style={{ maxWidth: "420px" }}
     >
       <Flex alignItems="center" direction="column">
-        <img
-          src={emptyStateImage}
-          alt="Background processing illustration"
-          height={200}
-        />
+        <EmptyStateUserCleared aria-hidden="true" height={200} />
 
         <Text variant="headline" el="h2">
           Your Account is Being Migrated

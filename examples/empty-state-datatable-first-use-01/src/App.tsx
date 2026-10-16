@@ -1,19 +1,7 @@
-import {
-  Text,
-  Flex,
-  Link,
-  Button,
-  Card,
-  usePrefersColorScheme,
-} from "@servicetitan/anvil2";
-import emptyStateImageLight from "../assets/empty_state-first_use-light.png";
-import emptyStateImageDark from "../assets/empty_state-first_use-dark.png";
+import { Text, Flex, Link, Button, Card } from "@servicetitan/anvil2";
+import { EmptyStateFirstUse } from "@servicetitan/anvil2-illustrations";
 
 function App() {
-  const { mode } = usePrefersColorScheme();
-
-  const emptyStateImage =
-    mode === "dark" ? emptyStateImageDark : emptyStateImageLight;
   return (
     <Card
       padding="large"
@@ -27,11 +15,7 @@ function App() {
         direction="column"
         style={{ maxWidth: "420px" }}
       >
-        <img
-          src={emptyStateImage}
-          alt="First-time setup illustration"
-          height={200}
-        />
+        <EmptyStateFirstUse aria-hidden="true" height={200} />
 
         <Text variant="headline" el="h2">
           Create Your First Report
