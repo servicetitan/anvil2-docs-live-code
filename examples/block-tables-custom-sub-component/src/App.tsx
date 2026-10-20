@@ -1,4 +1,4 @@
-import { Card, Chip, Divider, Flex, Text } from "@servicetitan/anvil2";
+import { Card, Chip, Divider, Flex, SrOnly, Text } from "@servicetitan/anvil2";
 import {
   DataTable,
   createColumnHelper,
@@ -50,6 +50,18 @@ const currency = (value: number) =>
     maximumFractionDigits: 2,
   })}`;
 
+const invoiceCell = {
+  border: "none",
+  fontWeight: 400,
+  padding: 0,
+  textAlign: "start" as const,
+  verticalAlign: "top" as const,
+};
+
+// Flex gap numbers resolve to size tokens: gap={3} is size-3, gap={8} is size-8.
+const invoiceRowGap = "var(--a2-size-3, 0.75rem)";
+const invoiceColumnGap = "var(--a2-size-8, 2rem)";
+
 const invoicePreview = (
   <Card flexDirection="column" gap={6} style={{ maxWidth: 900, width: "100%" }}>
     <Text variant="headline" el="h3" size="small">
@@ -78,44 +90,68 @@ const invoicePreview = (
         <Text subdued>New York, NY 10019</Text>
       </Flex>
     </Flex>
-    <Flex direction="column" gap={3} style={{ width: "100%" }}>
-      <Flex
-        justifyContent="space-between"
-        style={{ width: "100%", fontWeight: 600 }}
-      >
-        <Text style={{ fontWeight: 600 }}>Projects</Text>
-        <Flex gap={8}>
-          <Text style={{ fontWeight: 600, width: 60 }}>Hours</Text>
-          <Text style={{ fontWeight: 600, width: 70 }}>Rate</Text>
-          <Text style={{ fontWeight: 600, width: 80 }}>Price</Text>
-        </Flex>
-      </Flex>
-      {lineItems.map((item) => (
-        <Flex
-          key={item.name}
-          justifyContent="space-between"
-          style={{ width: "100%" }}
-        >
-          <Flex direction="column">
-            <Text style={{ fontWeight: 600 }}>{item.name}</Text>
-            <Text subdued size="small">
-              {item.description}
-            </Text>
-          </Flex>
-          <Flex gap={8}>
-            <Text subdued style={{ width: 60 }}>
-              {item.hours.toFixed(1)}
-            </Text>
-            <Text subdued style={{ width: 70 }}>
-              {currency(item.rate)}
-            </Text>
-            <Text subdued style={{ width: 80 }}>
-              {currency(item.hours * item.rate)}
-            </Text>
-          </Flex>
-        </Flex>
-      ))}
-    </Flex>
+    <table
+      style={{
+        borderCollapse: "separate",
+        borderSpacing: `0 ${invoiceRowGap}`,
+        width: "100%",
+      }}
+    >
+      <caption>
+        <SrOnly>Invoice line items</SrOnly>
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" style={{ ...invoiceCell, width: "100%" }}>
+            <Text style={{ fontWeight: 600 }}>Projects</Text>
+          </th>
+          <th scope="col" style={invoiceCell}>
+            <Text style={{ fontWeight: 600, width: 60 }}>Hours</Text>
+          </th>
+          <th
+            scope="col"
+            style={{ ...invoiceCell, paddingLeft: invoiceColumnGap }}
+          >
+            <Text style={{ fontWeight: 600, width: 70 }}>Rate</Text>
+          </th>
+          <th
+            scope="col"
+            style={{ ...invoiceCell, paddingLeft: invoiceColumnGap }}
+          >
+            <Text style={{ fontWeight: 600, width: 80 }}>Price</Text>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {lineItems.map((item) => (
+          <tr key={item.name}>
+            <th scope="row" style={{ ...invoiceCell, width: "100%" }}>
+              <Flex direction="column">
+                <Text style={{ fontWeight: 600 }}>{item.name}</Text>
+                <Text subdued size="small">
+                  {item.description}
+                </Text>
+              </Flex>
+            </th>
+            <td style={invoiceCell}>
+              <Text subdued style={{ width: 60 }}>
+                {item.hours.toFixed(1)}
+              </Text>
+            </td>
+            <td style={{ ...invoiceCell, paddingLeft: invoiceColumnGap }}>
+              <Text subdued style={{ width: 70 }}>
+                {currency(item.rate)}
+              </Text>
+            </td>
+            <td style={{ ...invoiceCell, paddingLeft: invoiceColumnGap }}>
+              <Text subdued style={{ width: 80 }}>
+                {currency(item.hours * item.rate)}
+              </Text>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </Card>
 );
 

@@ -153,7 +153,7 @@ const columns = [
     renderCell: (value: Order["amount"]) =>
       value == null ? "–" : currency(value),
     footerContent: [
-      <span key="total">{currency(totalAmount)}</span>,
+      <span key="total">{currency(totalAmount)} (total)</span>,
       <span key="average">{currency(averageAmount)} (avg)</span>,
     ],
   }),

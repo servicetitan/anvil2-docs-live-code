@@ -7,13 +7,14 @@ import {
   Icon,
   Button,
   Flex,
+  SrOnly,
 } from "@servicetitan/anvil2";
 import DragIndicator from "@servicetitan/anvil2/assets/icons/material/round/drag_indicator.svg";
 import PushPin from "@servicetitan/anvil2/assets/icons/material/round/push_pin.svg";
 
 function App() {
   return (
-    <Drawer open onClose={() => console.log("close")}>
+    <Drawer open aria-label="Edit columns" onClose={() => console.log("close")}>
       <Drawer.Header>Edit columns</Drawer.Header>
       <Drawer.Content>
         <Flex direction="column" gap={8} style={{ width: "100%" }}>
@@ -22,14 +23,25 @@ function App() {
               Your edits only apply to you and won’t affect teammates. You can
               reorder, hide, show, pin, or unpin columns below.
             </Text>
-            <SearchField placeholder="Search..." aria-label="Search columns" />
+            <SrOnly id="drawer-column-search-label">Search columns</SrOnly>
+            <SearchField
+              placeholder="Search..."
+              aria-labelledby="drawer-column-search-label"
+            />
           </Flex>
 
           <Flex direction="column" gap={6} style={{ width: "100%" }}>
             {/* Pinned */}
-            <Flex direction="column" gap={2} style={{ width: "100%" }}>
+            <Flex
+              direction="column"
+              gap={2}
+              role="group"
+              aria-labelledby="drawer-pinned-columns-label"
+              style={{ width: "100%" }}
+            >
               <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
                 <Text
+                  id="drawer-pinned-columns-label"
                   variant="eyebrow"
                   size="small"
                   style={{ whiteSpace: "nowrap" }}
@@ -64,9 +76,16 @@ function App() {
             </Flex>
 
             {/* Visible */}
-            <Flex direction="column" gap={2} style={{ width: "100%" }}>
+            <Flex
+              direction="column"
+              gap={2}
+              role="group"
+              aria-labelledby="drawer-visible-columns-label"
+              style={{ width: "100%" }}
+            >
               <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
                 <Text
+                  id="drawer-visible-columns-label"
                   variant="eyebrow"
                   size="small"
                   style={{ whiteSpace: "nowrap" }}
@@ -143,9 +162,16 @@ function App() {
             </Flex>
 
             {/* Hidden */}
-            <Flex direction="column" gap={2} style={{ width: "100%" }}>
+            <Flex
+              direction="column"
+              gap={2}
+              role="group"
+              aria-labelledby="drawer-hidden-columns-label"
+              style={{ width: "100%" }}
+            >
               <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
                 <Text
+                  id="drawer-hidden-columns-label"
                   variant="eyebrow"
                   size="small"
                   style={{ whiteSpace: "nowrap" }}

@@ -37,18 +37,18 @@ function App() {
               style={{ display: "block", width: "100%", height: "auto" }}
             />
           </div>
-          <Text size="large" inline style={{ fontWeight: "bold" }}>
+          <Text variant="headline" el="h2" noMargin>
             Sorry, we couldn’t find any results for{" "}
-            <Text inline style={{ color: "var(--a2-color-blue-600)" }}>
+            <span style={{ color: "var(--a2-color-blue-600)" }}>
               “jfjkleiklfj”
-            </Text>
+            </span>
           </Text>
           <Text subdued>
             Remember to check your spelling or try searching for something else.
           </Text>
         </Flex>
 
-        <Text inline style={{ fontWeight: "bold" }}>
+        <Text variant="headline" el="h3" size="small" noMargin>
           Try these instead:
         </Text>
 
@@ -61,7 +61,7 @@ function App() {
             style={{ width: "100%" }}
           >
             <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-              <Avatar name="Lindsay Walton" size="medium" />
+              <Avatar name="Lindsay Walton" size="medium" aria-hidden />
               <Flex direction="column" style={{ minWidth: 0 }}>
                 <Text inline style={{ fontWeight: "bold" }}>
                   Lindsay Walton
@@ -74,6 +74,7 @@ function App() {
             <Button
               appearance="secondary"
               icon={{ before: Add }}
+              aria-label="Invite Lindsay Walton"
               onClick={() => console.log("Invite Lindsay Walton")}
               style={{ flexShrink: 0 }}
             >
@@ -89,7 +90,7 @@ function App() {
             style={{ width: "100%" }}
           >
             <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-              <Avatar name="Courtney Henry" size="medium" />
+              <Avatar name="Courtney Henry" size="medium" aria-hidden />
               <Flex direction="column" style={{ minWidth: 0 }}>
                 <Text inline style={{ fontWeight: "bold" }}>
                   Courtney Henry
@@ -102,6 +103,7 @@ function App() {
             <Button
               appearance="secondary"
               icon={{ before: Add }}
+              aria-label="Invite Courtney Henry"
               onClick={() => console.log("Invite Courtney Henry")}
               style={{ flexShrink: 0 }}
             >
@@ -117,7 +119,7 @@ function App() {
             style={{ width: "100%" }}
           >
             <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-              <Avatar name="Tom Cook" size="medium" />
+              <Avatar name="Tom Cook" size="medium" aria-hidden />
               <Flex direction="column" style={{ minWidth: 0 }}>
                 <Text inline style={{ fontWeight: "bold" }}>
                   Tom Cook
@@ -130,6 +132,7 @@ function App() {
             <Button
               appearance="secondary"
               icon={{ before: Add }}
+              aria-label="Invite Tom Cook"
               onClick={() => console.log("Invite Tom Cook")}
               style={{ flexShrink: 0 }}
             >

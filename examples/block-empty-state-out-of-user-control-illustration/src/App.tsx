@@ -28,7 +28,7 @@ function App() {
           />
         </div>
         <Flex direction="column" alignItems="center" gap={2}>
-          <Text size="large" inline style={{ fontWeight: "bold" }}>
+          <Text variant="headline" el="h2" noMargin>
             Your Account is Being Migrated
           </Text>
           <Text subdued>

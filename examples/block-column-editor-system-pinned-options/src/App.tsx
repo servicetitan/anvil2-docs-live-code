@@ -6,6 +6,7 @@ import {
   Icon,
   Button,
   Flex,
+  SrOnly,
 } from "@servicetitan/anvil2";
 import DragIndicator from "@servicetitan/anvil2/assets/icons/material/round/drag_indicator.svg";
 import PushPin from "@servicetitan/anvil2/assets/icons/material/round/push_pin.svg";
@@ -18,14 +19,25 @@ function App() {
           Your edits only apply to you and won’t affect teammates. You can
           reorder, hide, show, pin, or unpin columns below.
         </Text>
-        <SearchField placeholder="Search..." aria-label="Search columns" />
+        <SrOnly id="system-column-search-label">Search columns</SrOnly>
+        <SearchField
+          placeholder="Search..."
+          aria-labelledby="system-column-search-label"
+        />
       </Flex>
 
       <Flex direction="column" gap={6} style={{ width: "100%" }}>
         {/* Pinned — Location Name is system-pinned: it cannot be hidden or unpinned */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="system-pinned-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="system-pinned-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}
@@ -55,9 +67,16 @@ function App() {
         </Flex>
 
         {/* Visible */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="system-visible-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="system-visible-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}
@@ -134,9 +153,16 @@ function App() {
         </Flex>
 
         {/* Hidden */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="system-hidden-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="system-hidden-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}

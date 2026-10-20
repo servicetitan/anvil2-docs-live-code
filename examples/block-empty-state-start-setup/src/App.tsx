@@ -33,7 +33,7 @@ function App() {
           />
         </div>
         <Flex direction="column" alignItems="center" gap={2}>
-          <Text size="large" inline style={{ fontWeight: "bold" }}>
+          <Text variant="headline" el="h2" noMargin>
             Looks like Reports haven’t been set up yet
           </Text>
           <Text subdued>

@@ -117,7 +117,7 @@ function App() {
                   gap={1}
                   style={{ flex: 1, minWidth: 0 }}
                 >
-                  <Text inline style={{ fontWeight: "bold" }}>
+                  <Text variant="headline" el="h2" size="small" noMargin>
                     {section.title}
                   </Text>
                   <Text subdued>{section.description}</Text>
@@ -125,6 +125,7 @@ function App() {
               </Flex>
               <Button
                 appearance="secondary"
+                aria-label={`Edit ${section.title}`}
                 onClick={() => console.log(`Edit ${section.title}`)}
                 style={{ flexShrink: 0 }}
               >

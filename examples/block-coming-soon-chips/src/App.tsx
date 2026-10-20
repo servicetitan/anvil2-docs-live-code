@@ -25,6 +25,12 @@ function DecorativeIcon({ svg }: { svg: Svg }) {
   );
 }
 
+const metricColumn = {
+  display: "grid",
+  gridRow: "span 3",
+  gridTemplateRows: "subgrid",
+};
+
 function App() {
   return (
     <Card
@@ -39,60 +45,51 @@ function App() {
 
       <Grid
         templateColumns="repeat(4, 1fr)"
+        templateRows="auto auto auto"
         columnGap={12}
         rowGap={1}
         alignItems="start"
         style={{ width: "100%" }}
       >
-        <Grid.Item>
+        <Grid.Item style={metricColumn}>
           <DecorativeIcon svg={WatchLater} />
-        </Grid.Item>
-        <Grid.Item>
-          <DecorativeIcon svg={PeopleAlt} />
-        </Grid.Item>
-        <Grid.Item>
-          <DecorativeIcon svg={CallMissed} />
-        </Grid.Item>
-        <Grid.Item>
-          <DecorativeIcon svg={EventAvailable} />
-        </Grid.Item>
-
-        <Grid.Item>
           <Text variant="eyebrow" size="small">
             Avg wait time
           </Text>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Text size="xlarge" style={{ fontWeight: "bold" }}>
+              5:50
+            </Text>
+          </div>
         </Grid.Item>
-        <Grid.Item>
+        <Grid.Item style={metricColumn}>
+          <DecorativeIcon svg={PeopleAlt} />
           <Text variant="eyebrow" size="small">
             Avg talk time
           </Text>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Chip label="Coming soon" size="medium" style={{ marginTop: 2 }} />
+          </div>
         </Grid.Item>
-        <Grid.Item>
+        <Grid.Item style={metricColumn}>
+          <DecorativeIcon svg={CallMissed} />
           <Text variant="eyebrow" size="small">
             Abandon rate
           </Text>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Text size="xlarge" style={{ fontWeight: "bold" }}>
+              6.5%
+            </Text>
+          </div>
         </Grid.Item>
-        <Grid.Item>
+        <Grid.Item style={metricColumn}>
+          <DecorativeIcon svg={EventAvailable} />
           <Text variant="eyebrow" size="small">
             Booking rate
           </Text>
-        </Grid.Item>
-
-        <Grid.Item style={{ display: "flex", alignItems: "center" }}>
-          <Text variant="headline" el="h4" size="large">
-            5:50
-          </Text>
-        </Grid.Item>
-        <Grid.Item style={{ display: "flex", alignItems: "center" }}>
-          <Chip label="Coming soon" size="medium" style={{ marginTop: 2 }} />
-        </Grid.Item>
-        <Grid.Item style={{ display: "flex", alignItems: "center" }}>
-          <Text variant="headline" el="h4" size="large">
-            6.5%
-          </Text>
-        </Grid.Item>
-        <Grid.Item style={{ display: "flex", alignItems: "center" }}>
-          <Chip label="Coming soon" size="medium" style={{ marginTop: 2 }} />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Chip label="Coming soon" size="medium" style={{ marginTop: 2 }} />
+          </div>
         </Grid.Item>
       </Grid>
     </Card>

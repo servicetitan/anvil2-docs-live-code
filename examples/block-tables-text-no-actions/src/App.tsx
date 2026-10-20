@@ -160,7 +160,7 @@ const columns = [
       { row }: { row: AuditEntry },
     ) => (
       <Flex alignItems="center" gap={2}>
-        <Avatar name={value} size="small" />
+        <Avatar name={value} size="small" aria-hidden />
         <Text inline subdued={row?.deactivated}>
           {value}
           {row?.deactivated ? " (Deactivated)" : ""}

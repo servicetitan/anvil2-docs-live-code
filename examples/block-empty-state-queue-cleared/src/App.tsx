@@ -28,7 +28,7 @@ function App() {
           />
         </div>
         <Flex direction="column" alignItems="center" gap={2}>
-          <Text inline style={{ fontWeight: "bold" }}>
+          <Text variant="headline" el="h2" size="small" noMargin>
             Queue cleared
           </Text>
           <Text size="small" subdued>

@@ -9,6 +9,7 @@ import {
   Flex,
   Icon,
   Text,
+  useBreakpoint,
 } from "@servicetitan/anvil2";
 import { InteractiveCard } from "@servicetitan/anvil2/beta";
 import ArrowForward from "@servicetitan/anvil2/assets/icons/material/round/arrow_forward.svg";
@@ -161,6 +162,7 @@ const activityItems: ActivityItem[] = [
 ];
 
 function App() {
+  const wide = Boolean(useBreakpoint()?.lg);
   const [sortAscending, setSortAscending] = useState(true);
   const [isActivityDrawerOpen, setIsActivityDrawerOpen] = useState(false);
 
@@ -173,8 +175,9 @@ function App() {
     <>
       <style>{`[data-home-screens-row] > button { border-color: transparent; }`}</style>
       <Flex
+        direction="column"
         gap={12}
-        alignItems="start"
+        lg={{ direction: "row", alignItems: "start" }}
         style={{ padding: "2rem", width: "100%" }}
       >
         {/* Deployments */}
@@ -182,6 +185,8 @@ function App() {
           <Flex
             justifyContent="space-between"
             alignItems="center"
+            gap={4}
+            wrap="wrap"
             style={{ width: "100%" }}
           >
             <Text variant="headline" el="h2">
@@ -202,12 +207,12 @@ function App() {
                 {index > 0 && <Divider />}
                 <InteractiveCard
                   wrapperProps={{
-                    "aria-label": `Open ${deployment.org} ${deployment.app} deployment`,
+                    "aria-label": `Open ${deployment.org} ${deployment.app} ${deployment.envLabel} deployment, initiated ${deployment.initiatedAgo}`,
                     "data-home-screens-row": "",
                     style: { width: "100%" },
                   }}
                   actionProps={{
-                    "aria-label": `Open ${deployment.org} ${deployment.app} deployment`,
+                    "aria-label": `Open ${deployment.org} ${deployment.app} ${deployment.envLabel} deployment, initiated ${deployment.initiatedAgo}`,
                     onClick: () => {},
                   }}
                   contentProps={{
@@ -265,7 +270,9 @@ function App() {
           padding="0"
           gap={0}
           background="strong"
-          style={{ width: 377, flexShrink: 0, alignSelf: "flex-start" }}
+          flexShrink={0}
+          alignSelf="flex-start"
+          style={{ width: wide ? 377 : "100%" }}
         >
           <Flex
             justifyContent="space-between"
@@ -288,12 +295,12 @@ function App() {
               {index > 0 && <Divider />}
               <InteractiveCard
                 wrapperProps={{
-                  "aria-label": `View activity from ${item.person}`,
+                  "aria-label": `View activity from ${item.person}, ${item.description}`,
                   "data-home-screens-row": "",
                   style: { width: "100%" },
                 }}
                 actionProps={{
-                  "aria-label": `View activity from ${item.person}`,
+                  "aria-label": `View activity from ${item.person}, ${item.description}`,
                   onClick: () => {},
                 }}
                 contentProps={{
@@ -314,7 +321,7 @@ function App() {
                   style={{ width: "100%" }}
                 >
                   <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-                    <Avatar name={item.person} size="medium" />
+                    <Avatar name={item.person} size="medium" aria-hidden />
                     <Text inline style={{ fontWeight: "bold" }}>
                       {item.person}
                     </Text>
@@ -332,6 +339,7 @@ function App() {
 
       <Drawer
         open={isActivityDrawerOpen}
+        aria-label="Activity feed"
         onClose={() => setIsActivityDrawerOpen(false)}
       >
         <Drawer.Header>Activity feed</Drawer.Header>
@@ -351,7 +359,7 @@ function App() {
                     style={{ width: "100%" }}
                   >
                     <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-                      <Avatar name={item.person} size="medium" />
+                      <Avatar name={item.person} size="medium" aria-hidden />
                       <Text inline style={{ fontWeight: "bold" }}>
                         {item.person}
                       </Text>

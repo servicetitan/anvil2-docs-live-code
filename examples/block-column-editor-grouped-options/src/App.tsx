@@ -6,6 +6,7 @@ import {
   Icon,
   Button,
   Flex,
+  SrOnly,
 } from "@servicetitan/anvil2";
 import DragIndicator from "@servicetitan/anvil2/assets/icons/material/round/drag_indicator.svg";
 import PushPin from "@servicetitan/anvil2/assets/icons/material/round/push_pin.svg";
@@ -18,14 +19,25 @@ function App() {
           Your edits only apply to you and won’t affect teammates. You can
           reorder, hide, show, pin, or unpin columns below.
         </Text>
-        <SearchField placeholder="Search..." aria-label="Search columns" />
+        <SrOnly id="grouped-column-search-label">Search columns</SrOnly>
+        <SearchField
+          placeholder="Search..."
+          aria-labelledby="grouped-column-search-label"
+        />
       </Flex>
 
       <Flex direction="column" gap={6} style={{ width: "100%" }}>
         {/* Pinned */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="grouped-pinned-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="grouped-pinned-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}
@@ -60,9 +72,16 @@ function App() {
         </Flex>
 
         {/* Visible — includes a grouped parent column with nested children */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="grouped-visible-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="grouped-visible-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}
@@ -137,50 +156,65 @@ function App() {
             />
           </Flex>
           <Flex
-            alignItems="center"
+            direction="column"
             gap={2}
-            style={{ padding: 4, width: "100%" }}
+            role="group"
+            aria-label="Parent Column Name"
+            style={{ width: "100%" }}
           >
-            <Icon
-              svg={DragIndicator}
-              color="var(--a2-foreground-color-subdued)"
-              aria-hidden
-            />
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <Checkbox label="Parent Column Name" defaultChecked />
-            </div>
-            <Button
-              appearance="ghost"
-              size="small"
-              icon={PushPin}
-              aria-label="Pin Parent Column Name"
-              onClick={() => console.log("Pin Parent Column Name")}
-            />
-          </Flex>
-          <Flex
-            alignItems="center"
-            gap={2}
-            style={{ padding: 4, paddingLeft: 32, width: "100%" }}
-          >
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <Checkbox label="Child Column 1" defaultChecked />
-            </div>
-          </Flex>
-          <Flex
-            alignItems="center"
-            gap={2}
-            style={{ padding: 4, paddingLeft: 32, width: "100%" }}
-          >
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <Checkbox label="Child Column 2" defaultChecked />
-            </div>
+            <Flex
+              alignItems="center"
+              gap={2}
+              style={{ padding: 4, width: "100%" }}
+            >
+              <Icon
+                svg={DragIndicator}
+                color="var(--a2-foreground-color-subdued)"
+                aria-hidden
+              />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <Checkbox label="Parent Column Name" defaultChecked />
+              </div>
+              <Button
+                appearance="ghost"
+                size="small"
+                icon={PushPin}
+                aria-label="Pin Parent Column Name"
+                onClick={() => console.log("Pin Parent Column Name")}
+              />
+            </Flex>
+            <Flex
+              alignItems="center"
+              gap={2}
+              style={{ padding: 4, paddingLeft: 32, width: "100%" }}
+            >
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <Checkbox label="Child Column 1" defaultChecked />
+              </div>
+            </Flex>
+            <Flex
+              alignItems="center"
+              gap={2}
+              style={{ padding: 4, paddingLeft: 32, width: "100%" }}
+            >
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <Checkbox label="Child Column 2" defaultChecked />
+              </div>
+            </Flex>
           </Flex>
         </Flex>
 
         {/* Hidden */}
-        <Flex direction="column" gap={2} style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={2}
+          role="group"
+          aria-labelledby="grouped-hidden-columns-label"
+          style={{ width: "100%" }}
+        >
           <Flex alignItems="center" gap={6} style={{ width: "100%" }}>
             <Text
+              id="grouped-hidden-columns-label"
               variant="eyebrow"
               size="small"
               style={{ whiteSpace: "nowrap" }}

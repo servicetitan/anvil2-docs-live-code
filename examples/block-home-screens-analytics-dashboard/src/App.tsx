@@ -8,6 +8,7 @@ import {
   Icon,
   SegmentedControl,
   Text,
+  useBreakpoint,
 } from "@servicetitan/anvil2";
 import { core } from "@servicetitan/anvil2/token";
 import Add from "@servicetitan/anvil2/assets/icons/material/round/add.svg";
@@ -17,6 +18,8 @@ import TrendingDown from "@servicetitan/anvil2/assets/icons/material/round/trend
 import TrendingUp from "@servicetitan/anvil2/assets/icons/material/round/trending_up.svg";
 
 function App() {
+  const wide = Boolean(useBreakpoint()?.lg);
+
   return (
     <Flex
       direction="column"
@@ -28,14 +31,15 @@ function App() {
         justifyContent="space-between"
         alignItems="center"
         gap={4}
+        wrap="wrap"
         style={{ width: "100%" }}
       >
-        <Flex alignItems="center" gap={6} style={{ minWidth: 0 }}>
+        <Flex alignItems="center" gap={6} wrap="wrap" style={{ minWidth: 0 }}>
           <Text variant="headline" el="h2">
             Cashflow
           </Text>
           <Divider vertical style={{ height: 24 }} />
-          <SegmentedControl defaultSelected="7d">
+          <SegmentedControl defaultSelected="7d" aria-label="Date range">
             <SegmentedControl.Segment value="7d">
               Last 7 days
             </SegmentedControl.Segment>
@@ -54,7 +58,11 @@ function App() {
 
       {/* Stats */}
       <Card padding="0" gap={0} style={{ width: "100%" }}>
-        <Flex style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          lg={{ direction: "row" }}
+          style={{ width: "100%" }}
+        >
           <Flex
             direction="column"
             gap={4}
@@ -62,7 +70,6 @@ function App() {
               flex: 1,
               minWidth: 0,
               padding: "24px 48px",
-              borderRight: "1px solid var(--a2-border-color-subdued)",
             }}
           >
             <Flex
@@ -78,10 +85,14 @@ function App() {
                 +4.75%
               </Text>
             </Flex>
-            <Text variant="headline" el="h3" size="xlarge">
+            <Text
+              size="xlarge"
+              style={{ fontWeight: "bold", marginTop: "auto" }}
+            >
               $405,091.00
             </Text>
           </Flex>
+          <Divider vertical={wide} />
 
           <Flex
             direction="column"
@@ -90,7 +101,6 @@ function App() {
               flex: 1,
               minWidth: 0,
               padding: "24px 48px",
-              borderRight: "1px solid var(--a2-border-color-subdued)",
             }}
           >
             <Flex
@@ -107,15 +117,20 @@ function App() {
                 style={{
                   fontWeight: 600,
                   color: "var(--a2-foreground-color-danger)",
+                  textAlign: "end",
                 }}
               >
-                +54.02%
+                +54.02% unfavorable
               </Text>
             </Flex>
-            <Text variant="headline" el="h3" size="xlarge">
+            <Text
+              size="xlarge"
+              style={{ fontWeight: "bold", marginTop: "auto" }}
+            >
               $12,787.00
             </Text>
           </Flex>
+          <Divider vertical={wide} />
 
           <Flex
             direction="column"
@@ -124,7 +139,6 @@ function App() {
               flex: 1,
               minWidth: 0,
               padding: "24px 48px",
-              borderRight: "1px solid var(--a2-border-color-subdued)",
             }}
           >
             <Flex
@@ -140,10 +154,14 @@ function App() {
                 -1.39%
               </Text>
             </Flex>
-            <Text variant="headline" el="h3" size="xlarge">
+            <Text
+              size="xlarge"
+              style={{ fontWeight: "bold", marginTop: "auto" }}
+            >
               $245,988.00
             </Text>
           </Flex>
+          <Divider vertical={wide} />
 
           <Flex
             direction="column"
@@ -164,12 +182,16 @@ function App() {
                 style={{
                   fontWeight: 600,
                   color: "var(--a2-foreground-color-danger)",
+                  textAlign: "end",
                 }}
               >
-                +10.18%
+                +10.18% unfavorable
               </Text>
             </Flex>
-            <Text variant="headline" el="h3" size="xlarge">
+            <Text
+              size="xlarge"
+              style={{ fontWeight: "bold", marginTop: "auto" }}
+            >
               $30,156.00
             </Text>
           </Flex>
@@ -189,14 +211,18 @@ function App() {
               width: "100%",
             }}
           >
-            <Text style={{ fontWeight: "bold" }}>Today</Text>
+            <Text variant="headline" el="h3" size="small" noMargin>
+              Today
+            </Text>
           </Flex>
 
           {/* Transaction 1 */}
           <Flex
+            direction="column"
             justifyContent="space-between"
             alignItems="start"
             gap={4}
+            lg={{ direction: "row" }}
             style={{
               borderBottom: "1px solid var(--a2-border-color-subdued)",
               padding: "24px 32px",
@@ -204,7 +230,7 @@ function App() {
             }}
           >
             <Flex gap={3} alignItems="start" style={{ flex: 1, minWidth: 0 }}>
-              <Icon svg={TrendingUp} size="xlarge" />
+              <Icon svg={TrendingUp} size="xlarge" aria-hidden />
               <Flex direction="column" gap={1} style={{ minWidth: 0 }}>
                 <Flex alignItems="center" gap={2}>
                   <Text inline style={{ fontWeight: "bold" }}>
@@ -236,7 +262,12 @@ function App() {
               alignItems="end"
               style={{ flexShrink: 0 }}
             >
-              <Button appearance="ghost">View transaction</Button>
+              <Button
+                appearance="ghost"
+                aria-label="View transaction, $7,600.00 USD, Paid"
+              >
+                View transaction
+              </Button>
               <Flex alignItems="center" gap={1}>
                 <Text size="small" subdued inline>
                   Invoice
@@ -250,9 +281,11 @@ function App() {
 
           {/* Transaction 2 */}
           <Flex
+            direction="column"
             justifyContent="space-between"
             alignItems="start"
             gap={4}
+            lg={{ direction: "row" }}
             style={{
               borderBottom: "1px solid var(--a2-border-color-subdued)",
               padding: "24px 32px",
@@ -260,7 +293,7 @@ function App() {
             }}
           >
             <Flex gap={3} alignItems="start" style={{ flex: 1, minWidth: 0 }}>
-              <Icon svg={TrendingDown} size="xlarge" />
+              <Icon svg={TrendingDown} size="xlarge" aria-hidden />
               <Flex direction="column" gap={1} style={{ minWidth: 0 }}>
                 <Flex alignItems="center" gap={2}>
                   <Text inline style={{ fontWeight: "bold" }}>
@@ -289,7 +322,12 @@ function App() {
               alignItems="end"
               style={{ flexShrink: 0 }}
             >
-              <Button appearance="ghost">View transaction</Button>
+              <Button
+                appearance="ghost"
+                aria-label="View transaction, $10,000.00 USD, Withdraw"
+              >
+                View transaction
+              </Button>
               <Flex alignItems="center" gap={1}>
                 <Text size="small" subdued inline>
                   Invoice
@@ -303,9 +341,11 @@ function App() {
 
           {/* Transaction 3 */}
           <Flex
+            direction="column"
             justifyContent="space-between"
             alignItems="start"
             gap={4}
+            lg={{ direction: "row" }}
             style={{
               borderBottom: "1px solid var(--a2-border-color-subdued)",
               padding: "24px 32px",
@@ -313,7 +353,7 @@ function App() {
             }}
           >
             <Flex gap={3} alignItems="start" style={{ flex: 1, minWidth: 0 }}>
-              <Icon svg={Flag} size="xlarge" />
+              <Icon svg={Flag} size="xlarge" aria-hidden />
               <Flex direction="column" gap={1} style={{ minWidth: 0 }}>
                 <Flex alignItems="center" gap={2}>
                   <Text inline style={{ fontWeight: "bold" }}>
@@ -345,7 +385,12 @@ function App() {
               alignItems="end"
               style={{ flexShrink: 0 }}
             >
-              <Button appearance="ghost">View transaction</Button>
+              <Button
+                appearance="ghost"
+                aria-label="View transaction, $2,000.00 USD, Overdue"
+              >
+                View transaction
+              </Button>
               <Flex alignItems="center" gap={1}>
                 <Text size="small" subdued inline>
                   Invoice
@@ -364,14 +409,18 @@ function App() {
               width: "100%",
             }}
           >
-            <Text style={{ fontWeight: "bold" }}>Yesterday</Text>
+            <Text variant="headline" el="h3" size="small" noMargin>
+              Yesterday
+            </Text>
           </Flex>
 
           {/* Transaction 4 */}
           <Flex
+            direction="column"
             justifyContent="space-between"
             alignItems="start"
             gap={4}
+            lg={{ direction: "row" }}
             style={{
               borderBottom: "1px solid var(--a2-border-color-subdued)",
               padding: "24px 32px",
@@ -379,7 +428,7 @@ function App() {
             }}
           >
             <Flex gap={3} alignItems="start" style={{ flex: 1, minWidth: 0 }}>
-              <Icon svg={TrendingUp} size="xlarge" />
+              <Icon svg={TrendingUp} size="xlarge" aria-hidden />
               <Flex direction="column" gap={1} style={{ minWidth: 0 }}>
                 <Flex alignItems="center" gap={2}>
                   <Text inline style={{ fontWeight: "bold" }}>
@@ -411,7 +460,12 @@ function App() {
               alignItems="end"
               style={{ flexShrink: 0 }}
             >
-              <Button appearance="ghost">View transaction</Button>
+              <Button
+                appearance="ghost"
+                aria-label="View transaction, $14,000.00, Paid"
+              >
+                View transaction
+              </Button>
               <Flex alignItems="center" gap={1}>
                 <Text size="small" subdued inline>
                   Invoice
@@ -437,7 +491,13 @@ function App() {
           </Text>
           <Button appearance="ghost">View all</Button>
         </Flex>
-        <Flex gap={4} alignItems="start" style={{ width: "100%" }}>
+        <Flex
+          direction="column"
+          gap={4}
+          alignItems="start"
+          lg={{ direction: "row" }}
+          style={{ width: "100%" }}
+        >
           {/* Client 1 */}
           <Card
             padding="0"
@@ -456,7 +516,7 @@ function App() {
               }}
             >
               <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-                <Avatar name="Tuple" size="medium" />
+                <Avatar name="Tuple" size="medium" aria-hidden />
                 <Text variant="headline" el="h3" size="small">
                   Tuple
                 </Text>
@@ -526,7 +586,7 @@ function App() {
               }}
             >
               <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-                <Avatar name="SavvyCal" size="medium" />
+                <Avatar name="SavvyCal" size="medium" aria-hidden />
                 <Text variant="headline" el="h3" size="small">
                   SavvyCal
                 </Text>
@@ -596,7 +656,7 @@ function App() {
               }}
             >
               <Flex alignItems="center" gap={2} style={{ minWidth: 0 }}>
-                <Avatar name="Reform" size="medium" />
+                <Avatar name="Reform" size="medium" aria-hidden />
                 <Text variant="headline" el="h3" size="small">
                   Reform
                 </Text>

@@ -146,7 +146,7 @@ const columns = [
     minWidth: 170,
     renderCell: (value: Call["customer"]) => (
       <Flex alignItems="center" gap={2}>
-        <Avatar name={value} size="small" />
+        <Avatar name={value} size="small" aria-hidden />
         <Text inline>{value}</Text>
       </Flex>
     ),
