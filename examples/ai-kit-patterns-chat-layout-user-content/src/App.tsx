@@ -27,11 +27,7 @@ function App() {
           width: "48rem",
         }}
       >
-        <UserMediaMessage
-          media={media}
-          timestamp={timestamp}
-          revealToolbarOnHover
-        />
+        <UserMediaMessage media={media} />
         <UserMessage
           content="Summarize this agreement and flag anything unusual."
           timestamp={timestamp}

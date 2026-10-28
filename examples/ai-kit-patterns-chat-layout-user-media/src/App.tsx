@@ -46,13 +46,11 @@ function App() {
           width: "48rem",
         }}
       >
-        {media.map((attachment, index) => (
+        {media.map((attachment) => (
           <UserMediaMessage
             key={attachment.fileName}
             media={attachment}
-            timestamp={new Date(2026, 3, 1, 16, 37 + index)}
             showPreview={false}
-            revealToolbarOnHover={index < media.length - 1}
           />
         ))}
       </div>

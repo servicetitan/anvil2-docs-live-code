@@ -10,7 +10,7 @@ function App() {
         maxWidth: "48rem",
       }}
     >
-      {/* Earlier message — toolbar hidden until hover or focus (pinned to its hover state here) */}
+      {/* Earlier message — toolbar hidden until hover or toolbar focus */}
       <UserMessage
         content="First message — hover to reveal the toolbar."
         timestamp={new Date(2026, 3, 1, 16, 35)}

@@ -9,7 +9,6 @@ function App() {
         fileTypeLabel: "PDF",
         href: "https://example.com/estimate.pdf",
       }}
-      timestamp={new Date(2026, 3, 1, 16, 40)}
     />
   );
 }
