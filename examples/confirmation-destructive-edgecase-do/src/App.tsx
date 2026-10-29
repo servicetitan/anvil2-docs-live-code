@@ -1,26 +1,27 @@
-import { Dialog, Flex, Button, Combobox } from "@servicetitan/anvil2";
+import {
+  Dialog,
+  Flex,
+  Button,
+  MultiSelectFieldSync,
+  type MultiSelectFieldOption,
+} from "@servicetitan/anvil2";
 import { useState } from "react";
 
-type Item = {
-  id: number;
-  name: string;
-};
-
-const items: Item[] = [
-  { id: 1, name: "First item" },
-  { id: 2, name: "Second item" },
-  { id: 3, name: "Third item" },
-  { id: 4, name: "Fourth item" },
-  { id: 5, name: "Fifth item" },
-  { id: 6, name: "Sixth item" },
-  { id: 7, name: "Seventh item" },
-  { id: 8, name: "Eighth item" },
-  { id: 9, name: "Ninth item" },
-  { id: 10, name: "Tenth item" },
+const options: MultiSelectFieldOption[] = [
+  { id: 1, label: "First item" },
+  { id: 2, label: "Second item" },
+  { id: 3, label: "Third item" },
+  { id: 4, label: "Fourth item" },
+  { id: 5, label: "Fifth item" },
+  { id: 6, label: "Sixth item" },
+  { id: 7, label: "Seventh item" },
+  { id: 8, label: "Eighth item" },
+  { id: 9, label: "Ninth item" },
+  { id: 10, label: "Tenth item" },
 ];
 
 function App() {
-  const [selectedItems, setSelectedItems] = useState<Item[] | null>([]);
+  const [value, setValue] = useState<MultiSelectFieldOption[]>([]);
 
   return (
     <div style={{ minWidth: "23rem", minHeight: "18rem" }}>
@@ -29,32 +30,13 @@ function App() {
         <Dialog.Content>
           <Flex direction="column" gap="2">
             Select the reason why you are canceling this receipt.
-            <Combobox
-              multiple
-              items={items}
-              itemToString={(item) => (item ? item.name : "")}
-              itemToKey={(item) => (item ? item.id : null)}
-              selectedItems={selectedItems ?? []}
-              onChange={setSelectedItems}
-              filterOptions={{ keys: ["name"] }}
-              style={{ width: "100%", maxWidth: "100%" }}
-            >
-              <Combobox.SearchField
-                label="Select a reason"
-                moreInfo="Please let us know why you are canceling"
-              />
-              <Combobox.Content>
-                {({ items }) => (
-                  <Combobox.List>
-                    {items.map((item, i) => (
-                      <Combobox.Item key={item.id} item={item} index={i}>
-                        {item.name}
-                      </Combobox.Item>
-                    ))}
-                  </Combobox.List>
-                )}
-              </Combobox.Content>
-            </Combobox>
+            <MultiSelectFieldSync
+              label="Select a reason"
+              moreInfo="Please let us know why you are canceling"
+              options={options}
+              value={value}
+              onSelectedOptionsChange={setValue}
+            />
           </Flex>
         </Dialog.Content>
         <Dialog.Footer>

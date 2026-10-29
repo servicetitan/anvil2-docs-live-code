@@ -1,25 +1,30 @@
-import { Combobox, Grid } from "@servicetitan/anvil2";
+import { Grid, SelectFieldSync } from "@servicetitan/anvil2";
 
 function App() {
   return (
     <Grid gap="6" style={{ minWidth: "384px" }}>
-      <Combobox items={[]}>
-        <Combobox.SearchField
-          label="Business Unit"
-          placeholder="Select a Business Unit"
-        />
-      </Combobox>
+      <SelectFieldSync
+        label="Business Unit"
+        placeholder="Select a Business Unit"
+        options={[]}
+        value={null}
+        onSelectedOptionChange={() => {}}
+      />
 
-      <Combobox items={[]}>
-        <Combobox.SearchField
-          label="Technician"
-          placeholder="Select a Technician"
-        />
-      </Combobox>
+      <SelectFieldSync
+        label="Technician"
+        placeholder="Select a Technician"
+        options={[]}
+        value={null}
+        onSelectedOptionChange={() => {}}
+      />
 
-      <Combobox items={[]}>
-        <Combobox.SearchField label="View by" />
-      </Combobox>
+      <SelectFieldSync
+        label="View by"
+        options={[]}
+        value={null}
+        onSelectedOptionChange={() => {}}
+      />
     </Grid>
   );
 }

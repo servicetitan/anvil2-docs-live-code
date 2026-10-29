@@ -3,15 +3,15 @@ import {
   type Filter,
   type CustomFilter,
 } from "@servicetitan/anvil2/beta";
-import { Radio, Combobox, ComboboxSelect, Flex } from "@servicetitan/anvil2";
+import {
+  Radio,
+  SelectFieldSync,
+  type SelectFieldOption,
+  Flex,
+} from "@servicetitan/anvil2";
 import { useState, useEffect } from "react";
 
-type ComboboxItem = {
-  id: string;
-  label: string;
-};
-
-const comboboxItems: ComboboxItem[] = [
+const operatorOptions: SelectFieldOption[] = [
   { id: "is", label: "Is" },
   { id: "isNot", label: "Is Not" },
 ];
@@ -27,33 +27,20 @@ const filterOptions = [
   { id: 3, label: "Option 3" },
 ];
 
-function OperatorCombobox() {
-  const [selectedItem, setSelectedItem] = useState<ComboboxItem | null>(
-    comboboxItems[0],
+function OperatorSelect() {
+  const [operator, setOperator] = useState<SelectFieldOption | null>(
+    operatorOptions[0],
   );
 
   return (
-    <ComboboxSelect
-      disableClearSelection
-      items={comboboxItems}
-      itemToString={(item) => (item ? item.label : "")}
-      itemToKey={(item) => (item ? item.id : null)}
-      selectedItem={selectedItem}
-      onChange={setSelectedItem}
-    >
-      <Combobox.SelectTrigger label="Custom Filter" />
-      <Combobox.Content>
-        {({ items }) => (
-          <Combobox.List>
-            {items.map((item, i) => (
-              <Combobox.Item key={item.id} item={item} index={i}>
-                {item.label}
-              </Combobox.Item>
-            ))}
-          </Combobox.List>
-        )}
-      </Combobox.Content>
-    </ComboboxSelect>
+    <SelectFieldSync
+      label="Custom Filter"
+      options={operatorOptions}
+      value={operator}
+      onSelectedOptionChange={setOperator}
+      disableSearch
+      disableClearButton
+    />
   );
 }
 
@@ -64,7 +51,7 @@ function App() {
     label: "Custom Filter",
     buttonRender: ({ value, onChange }) => (
       <Flex direction="column" gap={3} style={{ padding: "0.5rem" }}>
-        <OperatorCombobox />
+        <OperatorSelect />
         <Radio.Group legend="Custom filter button">
           {filterOptions.map((option) => (
             <Radio
@@ -87,7 +74,7 @@ function App() {
     ),
     drawerRender: ({ value, onChange }) => (
       <Flex direction="column" gap={2}>
-        <OperatorCombobox />
+        <OperatorSelect />
         <Radio.Group legend="Custom filter drawer">
           {filterOptions.map((option) => (
             <Radio

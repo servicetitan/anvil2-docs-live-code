@@ -1,26 +1,28 @@
-import { Dialog, Flex, Button, Text, Combobox } from "@servicetitan/anvil2";
+import {
+  Dialog,
+  Flex,
+  Button,
+  Text,
+  SelectFieldSync,
+  type SelectFieldOption,
+} from "@servicetitan/anvil2";
 import { useState } from "react";
 
-type Item = {
-  id: number;
-  name: string;
-};
-
-const items: Item[] = [
-  { id: 1, name: "First item" },
-  { id: 2, name: "Second item" },
-  { id: 3, name: "Third item" },
-  { id: 4, name: "Fourth item" },
-  { id: 5, name: "Fifth item" },
-  { id: 6, name: "Sixth item" },
-  { id: 7, name: "Seventh item" },
-  { id: 8, name: "Eighth item" },
-  { id: 9, name: "Ninth item" },
-  { id: 10, name: "Tenth item" },
+const options: SelectFieldOption[] = [
+  { id: 1, label: "First item" },
+  { id: 2, label: "Second item" },
+  { id: 3, label: "Third item" },
+  { id: 4, label: "Fourth item" },
+  { id: 5, label: "Fifth item" },
+  { id: 6, label: "Sixth item" },
+  { id: 7, label: "Seventh item" },
+  { id: 8, label: "Eighth item" },
+  { id: 9, label: "Ninth item" },
+  { id: 10, label: "Tenth item" },
 ];
 
 function App() {
-  const [selectedItem, setSelectedItem] = useState<Item | null>();
+  const [value, setValue] = useState<SelectFieldOption | null>(null);
 
   return (
     <div style={{ minWidth: "23rem", minHeight: "23.5rem" }}>
@@ -36,28 +38,12 @@ function App() {
               <li>Description...</li>
               <li>Description...</li>
             </ul>
-            <Combobox
-              items={items}
-              itemToString={(item) => (item ? item.name : "")}
-              itemToKey={(item) => (item ? item.id : null)}
-              selectedItem={selectedItem}
-              onChange={setSelectedItem}
-              filterOptions={{ keys: ["name"] }}
-              style={{ width: "100%", maxWidth: "100%" }}
-            >
-              <Combobox.SearchField label="Select an item" />
-              <Combobox.Content>
-                {({ items }) => (
-                  <Combobox.List>
-                    {items.map((item, i) => (
-                      <Combobox.Item key={item.id} item={item} index={i}>
-                        {item.name}
-                      </Combobox.Item>
-                    ))}
-                  </Combobox.List>
-                )}
-              </Combobox.Content>
-            </Combobox>
+            <SelectFieldSync
+              label="Select an item"
+              options={options}
+              value={value}
+              onSelectedOptionChange={setValue}
+            />
           </Flex>
         </Dialog.Content>
         <Dialog.Footer>
