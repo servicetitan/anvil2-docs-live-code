@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  color-scheme: light dark;
+  color: #ffffff;
+  background-color: #141414;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #141414;
+    background-color: #ffffff;
+  }
+}
+
+.carto-theme-preview {
+  background-color: #ffffff;
+  color: #141414;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
