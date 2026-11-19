@@ -75,23 +75,23 @@ function App() {
         <IllustrationWithCallouts
           Illustration={EmptyStateFirstUse}
           callouts={[
-            { top: 67, left: 181 },
-            { top: 110, left: 172 },
+            { top: 65, left: 190 },
+            { top: 113, left: 180 },
           ]}
         />
         <IllustrationWithCallouts
           Illustration={EmptyStateUserCleared}
           callouts={[
-            { top: 41, left: 147 },
-            { top: 97, left: 94 },
-            { top: 116, left: 177 },
+            { top: 36, left: 152 },
+            { top: 98, left: 93 },
+            { top: 120, left: 186 },
           ]}
         />
         <IllustrationWithCallouts
           Illustration={EmptyStateError}
           callouts={[
-            { top: 95, left: 93 },
-            { top: 122, left: 149 },
+            { top: 88, left: 92 },
+            { top: 119, left: 154 },
           ]}
         />
       </Flex>
